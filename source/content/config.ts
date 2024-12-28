@@ -56,6 +56,8 @@ const blogCollection = defineCollection({
 		description: z.string().nonempty().optional(),
 		pubDate: z.date(),
 		tags: z.array(z.enum([
+			'fichiers',
+			'gestion',
 			'programming',
 			'open-source',
 			'swift',

@@ -41,6 +41,8 @@
           "items": {
             "type": "string",
             "enum": [
+              "fichiers",
+              "gestion",
               "programming",
               "open-source",
               "swift",
