@@ -6,11 +6,11 @@ const normalizeApps = async app => {
 	const pubDate = Date.parse(data.pubDate);
 	const date30DaysAgo = new Date(new Date().setDate(new Date().getDate() - 30));
 
-	const faqHeadingTitle = 'Frequently Asked Questions';
+	const faqHeadingTitle = 'Questions posées fréquemment';
 
 	const mainLinks = {
-		...(data.repoUrl && {'Learn More': data.repoUrl}),
-		...(data.redirectUrl && {'Learn More': data.redirectUrl}),
+		...(data.repoUrl && {'En savoir plus': data.repoUrl}),
+		...(data.redirectUrl && {'En savoir plus': data.redirectUrl}),
 		...data.mainLinks,
 	};
 

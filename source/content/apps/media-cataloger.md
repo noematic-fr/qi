@@ -1,6 +1,6 @@
 ---
 title: Media Cataloger
-subtitle: Search and Analyse your File Structure Offline
+subtitle: Recherche et Analyse de votre Structure de Fichiers Hors Ligne
 pubDate: 2025-01-01
 isPaid: true
 platforms:
@@ -12,64 +12,61 @@ platforms:
 #appStoreId: 6465745322
 ---
 
-> Data is the oil of the 21st century, and analytics is the combustion engine.
-
+> Les données sont le pétrole du 21ème siècle, et l'analyse est le moteur à combustion.
 — Peter Sondergaard
 
-### Features
+### Fonctionnalités
 
-Media Cataloger list your medias and devices in an offline and local catalog.
+Media Cataloger répertorie vos médias et appareils dans un catalogue local et hors ligne.
 
-#### Local and Offline Disk Structure Access
+#### Accès à la Structure de Disque Locale et Hors Ligne
 
-Even when a disk isn’t connected, you can view its structure, browse its contents, and access detailed file information like modification dates and sizes.
+Même quand un disque n'est pas connecté, vous pouvez consulter sa structure, naviguer dans son contenu et accéder à des informations détaillées sur les fichiers comme les dates de modification et les tailles.
 
-#### Instant Disk Overview
+#### Vue Instantanée du Disque
 
-Quickly check how much free space is available on each drive at a glance, including local and remote disks.
+Vérifiez rapidement combien d'espace libre est disponible sur chaque lecteur d'un coup d'œil, y compris les disques locaux et distants.
 
-#### Visualize Disk Space Consumption
+#### Visualiser la Consommation de l'Espace Disque
 
-See which folders and files take up the most space with intuitive visualizations showing the percentage of disk usage, so you can make informed decisions on what to keep or remove.
+Voyez quels dossiers et fichiers occupent le plus d'espace avec des visualisations intuitives montrant le pourcentage d'utilisation du disque, afin de prendre des décisions éclairées sur ce qu'il faut conserver ou supprimer.
 
-#### File search
+#### Recherche de Fichiers
 
-Easily locate files by extension or name across all your cataloged drives—whether they are connected or not.
+Localisez facilement des fichiers par extension ou par nom sur tous vos disques catalogués, qu'ils soient connectés ou non.
 
-#### Catalog disks from anywhere with SSH
+#### Cataloguer des disques de n'importe où avec SSH
 
-Using the Secure Shell protocol, Media Cataloger is able to catalog medias from remote computers.
+En utilisant le protocole Secure Shell, Media Cataloger peut cataloguer des médias depuis des ordinateurs distants.
 
-#### Duplicate File Detection
+#### Détection de Fichiers Dupliqués
 
-Effortlessly find duplicate files within the same disk or across multiple disks, helping you to save space and organize files better.
+Trouvez sans effort les fichiers en double sur le même disque ou sur plusieurs disques, vous aidant à économiser de l'espace et à mieux organiser vos fichiers.
 
-#### Customizable Duplicate Lists
+#### Listes de Duplicatas Personnalisables
 
-Organize duplicates by subject, owner, or any criteria you choose.
+Organisez les duplicatas par sujet, propriétaire ou tout autre critère de votre choix.
 
-#### Unique File Finder
+#### Recherche de Fichiers Uniques
 
-Identify files that exist only on one disk and are not duplicated elsewhere.
+Identifiez les fichiers qui n'existent que sur un seul disque et ne sont pas dupliqués ailleurs.
 
-#### Remove Unnecessary Duplicates
+#### Suppression des Doublons Inutiles
 
-Free up disk space by easily removing redundant copies of files.
+Libérez de l'espace disque en supprimant facilement les copies redondantes de fichiers.
 
-#### Optimized for Multi-Processors
+#### Optimisé pour les Multi-Processeurs
 
-Enjoy faster performance with native multi-processor support, allowing you to manage large file catalogs with ease.
+Profitez d'une performance améliorée grâce à la prise en charge native des multi-processeurs, permettant de gérer facilement des catalogues de fichiers volumineux.
 
-#### Cross-Platform Compatibility
+#### Compatibilité Multi-Plateforme
 
-Whether you're using Windows, macOS, or Linux, event iOS and android, <em>Media Cataloger</em> works seamlessly across all major platforms.
+Que vous utilisiez Windows, macOS, ou Linux, même iOS et Android, Media Cataloger fonctionne de manière fluide sur toutes les principales plateformes.
 
+<a href="https://app.youform.com/forms/18nyuesk" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Restez informé</a>
 
-<a href="https://app.youform.com/forms/18nyuesk" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Stay in the Loop</a>
+### Questions Fréquemment Posées {#faq}
 
-### Frequently Asked Questions {#faq}
+#### Est-ce que c'est open source ?
 
-#### Is it open source?
-
-Some parts.
-
+Certaines parties.

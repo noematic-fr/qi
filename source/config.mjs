@@ -1,8 +1,8 @@
 export const SITE = {
 	name: 'Qi',
-	origin: 'https://qi.noematic.eu',
+	origin: 'https://qi.noematic.fr',
 	basePathname: '/',
 	title: 'Qi',
-	description: 'Indie Software',
+	description: 'Logiciels indépendants',
 	blogPostsPerPage: 10,
 };

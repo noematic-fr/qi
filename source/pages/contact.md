@@ -28,8 +28,8 @@ window.history.replaceState({}, '', url);
 
 # Contact
 
-Forum to use first.
+<a href="https://forum.qi.noematic.eu">Veuillez utiliser le forum en premier lieu.</a>
 
 <div class="sm:-mt-2 not-prose text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-secondary-500 sm:whitespace-nowrap hover:underline hover:underline-offset-8 hover:decoration-4 decoration-black dark:decoration-white">
-	<a id="contact-email" href="mailto:contact@noematic.eu">contact@noematic.eu</a>
+	<a id="contact-email" href="mailto:contact@noematic.fr">contact@noematic.fr</a>
 </div>

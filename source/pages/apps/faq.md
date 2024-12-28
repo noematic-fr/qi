@@ -1,6 +1,6 @@
 ---
 layout: ~/layouts/MarkdownLayout.astro
-title: Frequently Asked Questions
+title: Foire aux questions
 ---
 
-# Frequently Asked Questions
+# Foire aux Questions

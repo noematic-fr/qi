@@ -3,50 +3,50 @@ layout: ~/layouts/MarkdownLayout.astro
 title: Terms of Use
 ---
 
-# Apps — Terms of Use
+# Applications — Conditions d'utilisation
 
-Please take a moment to familiarize yourself with the following guidelines. They are designed to ensure a beneficial experience for us both.
+Veuillez prendre un moment pour vous familiariser avec les directives suivantes. Elles sont conçues pour garantir une expérience bénéfique pour nous deux.
 
-## General
+# Généralités
 
-By using my apps, you agree to these terms and any subsequent changes. I may update them without direct notice. Always check the latest terms here.
+En utilisant mes applications, vous acceptez ces termes et toutes les modifications ultérieures. Je peux les mettre à jour sans préavis direct. Vérifiez toujours les conditions les plus récentes ici.
 
-## Permitted Use
+# Utilisation autorisée
 
-You may use my apps without restrictions for their intended purposes. However, malicious usage is strictly prohibited.
+Vous pouvez utiliser mes applications sans restrictions pour leurs fins prévues. Cependant, l'utilisation malveillante est strictement interdite.
 
-## Intellectual Property
+# Propriété intellectuelle
 
-All content, features, and functionality of the apps are owned by me and protected by intellectual property laws. You may not reproduce, modify, distribute, or exploit any part of the apps without explicit permission.
+Tout le contenu, les fonctionnalités et la fonctionnalité des applications m'appartiennent et sont protégés par les lois sur la propriété intellectuelle. Vous ne pouvez pas reproduire, modifier, distribuer ou exploiter une partie des applications sans permission explicite.
 
-## App Store
+# App Store
 
-If you get my apps from the App Store, [Apple’s EULA](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/) applies.
+Si vous obtenez mes applications depuis l'App Store, les Conditions d'utilisation d'Apple s'appliquent.
 
-## Software Integrity
+# Intégrité du logiciel
 
-Perfection is the goal, but occasional bugs may appear. I deeply value the trust you place in my apps, yet I cannot promise complete flawlessness. For your peace of mind, regular backups are highly recommended.
+La perfection est l'objectif, mais des bugs peuvent parfois apparaître. J'apprécie profondément la confiance que vous placez dans mes applications, mais je ne peux pas garantir une absence totale de défauts. Pour votre tranquillité d'esprit, des sauvegardes régulières sont fortement recommandées.
 
-## Accessibility (ADA Compliance)
+# Accessibilité (Conformité ADA)
 
-I am committed to making my apps accessible to everyone, including individuals with disabilities. If you encounter any accessibility issues while using my website or apps, please [contact me](/feedback) to report them, and I will do my best to address and resolve the concerns promptly. Accessibility improvements are continuously being made to ensure a user-friendly experience for all.
+Je m'engage à rendre mes applications accessibles à tous, y compris aux personnes handicapées. Si vous rencontrez des problèmes d'accessibilité en utilisant mon site web ou mes applications, veuillez me contacter (/feedback) pour les signaler, et je ferai de mon mieux pour les résoudre rapidement. Des améliorations en matière d'accessibilité sont constamment apportées pour garantir une expérience conviviale pour tous.
 
-## Liability
+# Responsabilité
 
-I disclaim all liability arising from the use or misuse of my apps. Users assume all risks and consequences tied to their actions based on the apps' functionality or content.
+Je décline toute responsabilité découlant de l'utilisation ou du mésusage de mes applications. Les utilisateurs assument tous les risques et conséquences liés à leurs actions basées sur la fonctionnalité ou le contenu des applications.
 
-## Indemnification
+# Indemnisation
 
-You agree to indemnify me against any claims, liabilities, damages, or expenses arising from your use of the apps or breach of these terms.
+Vous acceptez de m'indemniser contre toute réclamation, responsabilité, dommage ou dépense découlant de votre utilisation des applications ou de la violation de ces termes.
 
-## Refunds
+# Remboursements
 
-For apps purchased on the Apple App Store, you can [request a refund](https://support.apple.com/en-us/HT204084). However, I would appreciate if you [reached out](/feedback) first. I may be able to resolve any problems you are having.
+Pour les applications achetées sur l'App Store d'Apple, vous pouvez demander un remboursement. Cependant, j'apprécierais si vous me contactiez (/feedback) d'abord. Je pourrais peut-être résoudre les problèmes que vous rencontrez.
 
-## Support
+# Support
 
-I aim to address all support and related queries within a week. There might be occasional delays, and I appreciate your understanding.
+Je m'efforce de répondre à toutes les demandes de support et questions connexes dans la semaine. Il peut y avoir des retards occasionnels, et j'apprécie votre compréhension.
 
 ---
 
-Last Update: 2024-09-13
+Last Update: 2024-12-23
