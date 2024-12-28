@@ -7,8 +7,6 @@ tags:
   - gestion
 ---
 
-Vos données, c'est un peu comme la bibliothèque secrète de vos souvenirs numériques, et elles s'accumulent à une vitesse folle. Ce qui était peut-être un petit tas de fichiers au départ menace maintenant de devenir un véritable labyrinthe. Avez-vous trouvé le moyen de ranger tout ça proprement et en toute sécurité ? Si la réponse est non, il est grand temps de s'y mettre sérieusement.
-
 Nous allons vous guider à travers les meilleures pratiques pour garder la main sur votre royaume numérique :
 
  - Planifier une structure logique qui a du sens pour vous
