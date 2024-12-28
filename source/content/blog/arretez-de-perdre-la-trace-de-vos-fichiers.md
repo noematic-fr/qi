@@ -1,5 +1,5 @@
 ---
-title: Arrêtez de perdre la trace de vos fichiers; Transformez votre gestion des données dès aujourd'hui
+title: Arrêtez de perdre la trace de vos fichiers ; Transformez votre gestion des données dès aujourd'hui
 description: Vos données, c'est un peu comme la bibliothèque secrète de vos souvenirs numériques, et elles s'accumulent à une vitesse folle. Ce qui était peut-être un petit tas de fichiers au départ menace maintenant de devenir un véritable labyrinthe. Avez-vous trouvé le moyen de ranger tout ça proprement et en toute sécurité ? Si la réponse est non, il est grand temps de s'y mettre sérieusement.
 pubDate: 2024-12-28
 tags:
@@ -95,6 +95,6 @@ Utilisez ces révisions pour évaluer si vos conventions de nommage, vos structu
 
 Combien de disques avez-vous ? Comment faites-vous pour retrouver un fichier ? Comment analyser le contenu efficacement ?
 
-Noematic y travaille : https://qi.noematic.eu/media-cataloger Suivez-nous !
+Noematic y travaille : [Media Cataloger](https://qi.noematic.fr/media-cataloger)
 
-Publié sur LinkedIn: https://www.linkedin.com/pulse/arr%C3%AAtez-de-perdre-la-trace-vos-fichiers-transformez-votre-gestion-ldgbe/?trackingId=AkZmz7M4TuqDJkj9Q4aR%2Fw%3D%3D
+[Publié sur LinkedIn](https://www.linkedin.com/pulse/arr%C3%AAtez-de-perdre-la-trace-vos-fichiers-transformez-votre-gestion-ldgbe/?trackingId=AkZmz7M4TuqDJkj9Q4aR%2Fw%3D%3D)
