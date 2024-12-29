@@ -35,4 +35,4 @@ MediaCataloger est votre allié pour organiser non seulement vos médias numéri
 
 ## Conclusion
 
-Avec [MediaCataloger](/apps/media-cataloger), non seulement vous gardez le contrôle sur votre collection de médias numériques et vos documents importants, mais vous transformez cette tâche en une expérience enrichissante. Que vous soyez amateur de photographie, cinéphile, musicien, ou professionnel nécessitant une gestion documentaire efficace, [MediaCataloger](/apps/media-cataloger) est l'outil qui répond à vos besoins d'organisation. Inscrivez-vous dès aujourd'hui afin de recevoir la date de disponibilité de celui-ci !
+Avec [MediaCataloger](/media-cataloger), non seulement vous gardez le contrôle sur votre collection de médias numériques et vos documents importants, mais vous transformez cette tâche en une expérience enrichissante. Que vous soyez amateur de photographie, cinéphile, musicien, ou professionnel nécessitant une gestion documentaire efficace, [MediaCataloger](/media-cataloger) est l'outil qui répond à vos besoins d'organisation. Inscrivez-vous dès aujourd'hui afin de recevoir la date de disponibilité de celui-ci !
