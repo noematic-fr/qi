@@ -29,6 +29,7 @@ Tout comme vous ne jetteriez pas tous vos vêtements en vrac dans un grand tas, 
 Commencez par les trier dans des catégories claires - pensez à des dossiers comme "Projets", "Clients", "2024" ou "Marketing".
 
 ## Gardez votre système de classement simple
+
 Utilisez des noms cohérents pour vos dossiers et évitez de trop multiplier les sous-dossiers ; vous voulez trouver les choses facilement, pas partir à la chasse au trésor.
 
 Évitez les noms comme "Divers" ou "Bazar" - ce sont l'équivalent numérique de ce tiroir en désordre que tout le monde a mais qu'on préférerait ne pas avoir.
@@ -95,6 +96,6 @@ Utilisez ces révisions pour évaluer si vos conventions de nommage, vos structu
 
 Combien de disques avez-vous ? Comment faites-vous pour retrouver un fichier ? Comment analyser le contenu efficacement ?
 
-Noematic y travaille : [Media Cataloger](https://qi.noematic.fr/media-cataloger)
+Noematic y travaille : [Media Cataloger](/apps/media-cataloger)
 
 [Publié sur LinkedIn](https://www.linkedin.com/pulse/arr%C3%AAtez-de-perdre-la-trace-vos-fichiers-transformez-votre-gestion-ldgbe/?trackingId=AkZmz7M4TuqDJkj9Q4aR%2Fw%3D%3D)
