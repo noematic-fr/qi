@@ -35,6 +35,6 @@ L'interface de MediaCataloger est conçue pour être utilisable par tous, rendan
 
 En permettant de définir des sauvegardes automatiques et de partager des collections de fichiers, MediaCataloger assure que vous ne perdez jamais vos fichiers et que vous pouvez les retrouver ou les partager facilement, répondant ainsi à la question de la disponibilité et de la localisation des fichiers.
 
-Ainsi, [MediaCataloger](/media-cataloger) résout le "point 5" en offrant des solutions pour chaque pourquoi identifié, transformant une situation de désorganisation en une gestion efficace des fichiers. Cela permet de gagner du temps, d'améliorer la productivité et de réduire le stress associé à la recherche de documents ou de médias perdus.
+Ainsi, [MediaCataloger](/media-cataloger) résout les "5 Pourquoi" en offrant des solutions pour chaque pourquoi identifié, transformant une situation de désorganisation en une gestion efficace des fichiers. Cela permet de gagner du temps, d'améliorer la productivité et de réduire le stress associé à la recherche de documents ou de médias perdus.
 
-Inscrivez-vous dès aujourd'hui afin de recevoir la date de disponibilité de celui-ci !
+<a href="https://app.youform.com/forms/18nyuesk" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Inscrivez-vous dès aujourd'hui afin de recevoir la date de disponibilité de celui-ci !</a>
