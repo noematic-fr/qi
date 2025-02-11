@@ -50,7 +50,7 @@
 		],
 		"ignores": [
 			"source/content/config.ts",
-			"public/count.js"
+			"public/count.min.js"
 		],
 		"overrides": [
 			{
