@@ -46,6 +46,8 @@ export default defineConfig({
 			},
 		},
 		css: {
+			// Note: devSourcemap is safe for static sites (output: 'static')
+			// as there's no server-side code to expose. This only affects dev mode.
 			devSourcemap: true,
 			transformer: 'postcss',
 		},
