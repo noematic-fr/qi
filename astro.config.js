@@ -1,7 +1,6 @@
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {defineConfig} from 'astro/config';
-import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import remarkCustomHeaderId from 'remark-custom-header-id';
 import {SITE} from './source/config.mjs';
@@ -24,9 +23,6 @@ export default defineConfig({
 	//	'/lock-screen-one': '/any-text',
 	},
 	integrations: [
-		tailwind({
-			applyBaseStyles: false,
-		}),
 		sitemap(),
 	],
 	markdown: {

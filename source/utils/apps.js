@@ -1,8 +1,8 @@
 import {markdown} from '@astropub/md';
-import {getCollection} from 'astro:content';
+import {getCollection, render} from 'astro:content';
 
 const normalizeApps = async app => {
-	const {data, slug} = app;
+	const {data, id} = app;
 	const pubDate = Date.parse(data.pubDate);
 	const date30DaysAgo = new Date(new Date().setDate(new Date().getDate() - 30));
 
@@ -16,7 +16,7 @@ const normalizeApps = async app => {
 
 	let hasFaqSection = false;
 
-	const {Content, headings} = await app.render();
+	const {Content, headings} = await render(app);
 
 	const headerLinks = headings
 		.filter(header => header.depth === 3)
@@ -39,7 +39,7 @@ const normalizeApps = async app => {
 
 	videos = await Promise.all(
 		Object.entries(videos)
-			.filter(([key]) => key.startsWith(`/public/apps/${slug}/`))
+			.filter(([key]) => key.startsWith(`/public/apps/${id}/`))
 			.map(([, value]) => value()),
 	);
 
@@ -49,7 +49,7 @@ const normalizeApps = async app => {
 
 	screenshots = await Promise.all(
 		Object.entries(screenshots)
-			.filter(([key]) => key.startsWith(`/public/apps/${slug}/`))
+			.filter(([key]) => key.startsWith(`/public/apps/${id}/`))
 			.map(([, value]) => value()),
 	);
 
@@ -64,10 +64,10 @@ const normalizeApps = async app => {
 	return {
 		...data,
 		pubDate,
-		slug: data.slug ?? slug,
-		url: data.redirectUrl ?? `/${slug}`,
+		slug: data.slug ?? id,
+		url: data.redirectUrl ?? `/${id}`,
 		isRedirect: data.redirectUrl !== undefined,
-		iconUrl: `/apps/${slug}/icon.webp`,
+		iconUrl: `/apps/${id}/icon.webp`,
 		// We can use `forceHasiOSAppIcon` for both true/false override.
 		hasIOSAppIcon: data.forceHasIosAppIcon ?? ((data.platforms.includes('iOS') || data.platforms.includes('watchOS')) && !data.platforms.includes('macOS')),
 		isNew: pubDate > date30DaysAgo,
@@ -77,7 +77,7 @@ const normalizeApps = async app => {
 		videos,
 		screenshots,
 		Content,
-		olderVersionsUrl: data.repoUrl ? `${data.repoUrl}#download` : `/${slug}#older-versions`,
+		olderVersionsUrl: data.repoUrl ? `${data.repoUrl}#download` : `/${id}#older-versions`,
 		...(data.appStoreId && {appStoreUrl: `https://apps.apple.com/app/id${data.appStoreId}`}),
 		...(data.setappId && {setappUrl: `https://go.setapp.com/stp181?refAppID=${data.setappId}&utm_medium=vendor_program&utm_content=button`}),
 		feedbackNote,

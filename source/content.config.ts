@@ -1,6 +1,9 @@
-import {defineCollection, z} from 'astro:content';
+import {defineCollection} from 'astro:content';
+import {glob} from 'astro/loaders';
+import {z} from 'astro/zod';
 
 const appsCollection = defineCollection({
+	loader: glob({pattern: '**/*.md', base: './source/content/apps'}),
 	schema: z.object({
 		draft: z.boolean().default(false),
 		isUnlisted: z.boolean().default(false),
@@ -28,7 +31,7 @@ const appsCollection = defineCollection({
 		overflowLinks: z.record(z.string().url()).optional(),
 		showSupportLink: z.boolean().default(true),
 		redirectUrl: z.string().url().optional(),
-		forceHasIosAppIcon: z.boolean().optional(), // // We can use `forceHasIosAppIcon` for both true/false override.
+		forceHasIosAppIcon: z.boolean().optional(),
 		olderMacOSVersions: z.array(z.enum([
 			'10.13',
 			'10.14',
@@ -49,6 +52,7 @@ const appsCollection = defineCollection({
 });
 
 const blogCollection = defineCollection({
+	loader: glob({pattern: '**/*.md', base: './source/content/blog'}),
 	schema: z.object({
 		draft: z.boolean().default(false),
 		isUnlisted: z.boolean().default(false),

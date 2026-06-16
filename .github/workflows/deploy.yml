@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
-  schedule:
-    - cron: '0 0 * * *' # Runs every night at midnight UTC
 
 jobs:
   build:
@@ -15,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: withastro/action@v2
+      - uses: withastro/action@v5
 
   deploy:
     needs: build

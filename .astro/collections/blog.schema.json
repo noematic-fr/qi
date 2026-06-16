@@ -1,70 +1,53 @@
 {
-  "$ref": "#/definitions/blog",
-  "definitions": {
-    "blog": {
-      "type": "object",
-      "properties": {
-        "draft": {
-          "type": "boolean",
-          "default": false
-        },
-        "isUnlisted": {
-          "type": "boolean",
-          "default": false
-        },
-        "title": {
-          "type": "string",
-          "minLength": 1
-        },
-        "description": {
-          "type": "string",
-          "minLength": 1
-        },
-        "pubDate": {
-          "anyOf": [
-            {
-              "type": "string",
-              "format": "date-time"
-            },
-            {
-              "type": "string",
-              "format": "date"
-            },
-            {
-              "type": "integer",
-              "format": "unix-time"
-            }
-          ]
-        },
-        "tags": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "enum": [
-              "fichiers",
-              "gestion",
-              "programming",
-              "open-source",
-              "swift",
-              "javascript",
-              "nodejs"
-            ]
-          }
-        },
-        "redirectUrl": {
-          "type": "string",
-          "format": "uri"
-        },
-        "$schema": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "title",
-        "pubDate"
-      ],
-      "additionalProperties": false
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "draft": {
+      "default": false,
+      "type": "boolean"
+    },
+    "isUnlisted": {
+      "default": false,
+      "type": "boolean"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "pubDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "fichiers",
+          "gestion",
+          "programming",
+          "open-source",
+          "swift",
+          "javascript",
+          "nodejs"
+        ]
+      }
+    },
+    "redirectUrl": {
+      "type": "string",
+      "format": "uri"
+    },
+    "$schema": {
+      "type": "string"
     }
   },
-  "$schema": "http://json-schema.org/draft-07/schema#"
+  "required": [
+    "title",
+    "pubDate"
+  ],
+  "additionalProperties": false
 }
