@@ -12,6 +12,11 @@ platforms:
 #appStoreId: 6465745322
 ---
 
+<div class="mb-6 rounded-2xl border border-amber-500/40 bg-amber-50 px-5 py-4 text-amber-950 dark:border-amber-400/30 dark:bg-amber-950/40 dark:text-amber-100">
+  <p class="m-0 font-medium">Remaster Godot en cours de développement</p>
+  <p class="mt-2 mb-0 text-sm opacity-90">La démo jouable ci-dessous est le classique de 2013 (Impact.js). Une édition moderne en Godot arrive — mêmes niveaux, moteur actualisé. <a href="https://app.youform.com/forms/4fqdjajy" class="underline hover:no-underline">Restez informé</a>.</p>
+</div>
+
 Sauvez la forêt des incendies avec un avion. La direction et la force du vent ont un impact sur la manière dont vous combattrez le feu.
 
 <br>
