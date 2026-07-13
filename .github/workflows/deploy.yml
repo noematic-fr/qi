@@ -13,6 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: withastro/action@v5
+        env:
+          PUBLIC_WATCHNO_INGEST_URL: https://api.watchnocode.noematic.eu/ingest
+          PUBLIC_WATCHNO_API_KEY: ${{ secrets.WATCHNO_API_KEY }}
+          PUBLIC_WATCHNO_PROJECT_ID: ${{ secrets.WATCHNO_PROJECT_ID }}
+          PUBLIC_WATCHNO_SCRIPT_URL: https://qi.noematic.eu/watchno.min.js
 
   deploy:
     needs: build

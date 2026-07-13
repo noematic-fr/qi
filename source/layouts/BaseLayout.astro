@@ -2,6 +2,7 @@
 import '~/assets/styles/base.css';
 import MetaTags from '~/components/core/MetaTags.astro';
 import BasicScripts from '~/components/core/BasicScripts.astro';
+import WatchNo from '~/components/core/WatchNo.astro';
 
 const {meta = {}} = Astro.props;
 ---
@@ -10,6 +11,7 @@ const {meta = {}} = Astro.props;
 <html lang="fr" class="motion-safe:scroll-smooth 2xl:text-[20px]">
 	<head>
 		<MetaTags {...meta}/>
+		<WatchNo />
 		<!--<link rel="preload" href="/assets/styles/base.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 		<noscript><link rel="stylesheet" href="/assets/styles/base.css"></noscript> -->
 	</head>
