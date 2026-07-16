@@ -127,7 +127,12 @@ const tagClass = 'text-[10px] inline-flex items-center font-bold leading-sm px-1
 		url: appStoreUrl
 	};
 
-	if (navigator.canShare(shareData)) {
+	// canShare is not available in all browsers that implement share
+	const canShare =
+		typeof navigator.share === 'function' &&
+		(typeof navigator.canShare !== 'function' || navigator.canShare(shareData));
+
+	if (canShare) {
 		const shareButton = document.querySelector('#share-button');
 
 		shareButton.style.display = 'block';

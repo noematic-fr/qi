@@ -9,21 +9,21 @@ title: Contact
 const originalSearchParams = new URLSearchParams(location.search);
 const element = document.querySelector('#contact-email');
 
-const url = new URL(element.href);
+const mailtoUrl = new URL(element.href);
 if (originalSearchParams.has('subject')) {
-	url.searchParams.set('subject', originalSearchParams.get('subject'));
+	mailtoUrl.searchParams.set('subject', originalSearchParams.get('subject'));
 }
 if (originalSearchParams.has('body')) {
-	url.searchParams.set('body', originalSearchParams.get('body'));
+	mailtoUrl.searchParams.set('body', originalSearchParams.get('body'));
 }
 
-element.href = url.toString();
+element.href = mailtoUrl.toString();
 
 // Clear URL parameters.
-const url = new URL(window.location);
-url.searchParams.delete('subject');
-url.searchParams.delete('body');
-window.history.replaceState({}, '', url);
+const pageUrl = new URL(window.location);
+pageUrl.searchParams.delete('subject');
+pageUrl.searchParams.delete('body');
+window.history.replaceState({}, '', pageUrl);
 </script>
 
 # Contact
