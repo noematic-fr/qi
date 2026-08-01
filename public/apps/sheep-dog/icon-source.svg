@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="grass" cx="48%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#D8EAC2"/>
+      <stop offset="50%" stop-color="#C8DDB0"/>
+      <stop offset="100%" stop-color="#A8C48A"/>
+    </radialGradient>
+    <radialGradient id="shadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#141810" stop-opacity="0.28"/>
+      <stop offset="65%" stop-color="#141810" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#141810" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="wool" cx="38%" cy="32%" r="62%">
+      <stop offset="0%" stop-color="#FFFCF5"/>
+      <stop offset="50%" stop-color="#F3EDE0"/>
+      <stop offset="100%" stop-color="#C9BBA8"/>
+    </radialGradient>
+    <radialGradient id="dog" cx="42%" cy="36%" r="62%">
+      <stop offset="0%" stop-color="#3D2C22"/>
+      <stop offset="50%" stop-color="#2A1F18"/>
+      <stop offset="100%" stop-color="#1A120E"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="512" height="512" fill="url(#grass)"/>
+
+  <!-- shadows -->
+  <ellipse cx="200" cy="340" rx="56" ry="17" fill="url(#shadow)"/>
+  <ellipse cx="278" cy="354" rx="46" ry="14" fill="url(#shadow)"/>
+  <ellipse cx="348" cy="328" rx="72" ry="20" fill="url(#shadow)"/>
+
+  <!-- Sheep A (left, slightly back) — faces right toward dog -->
+  <g transform="translate(200 304)">
+    <ellipse cx="-4" cy="10" rx="48" ry="36" fill="#C9BBA8"/>
+    <ellipse cx="2" cy="2" rx="46" ry="34" fill="url(#wool)"/>
+    <ellipse cx="16" cy="-10" rx="22" ry="18" fill="#FFFCF5"/>
+    <!-- head / face -->
+    <ellipse cx="34" cy="6" rx="17" ry="14" fill="#7A5A48"/>
+    <ellipse cx="36" cy="4" rx="12" ry="10" fill="#4A3428"/>
+    <circle cx="42" cy="2" r="3" fill="#1A1210"/>
+    <!-- legs -->
+    <ellipse cx="-16" cy="32" rx="5" ry="9" fill="#3E2C22"/>
+    <ellipse cx="12" cy="34" rx="5" ry="9" fill="#3E2C22"/>
+    <!-- bell -->
+    <circle cx="24" cy="18" r="5.5" fill="#E8A54B"/>
+    <circle cx="25.5" cy="16.5" r="2" fill="#FFE08A"/>
+  </g>
+
+  <!-- Sheep B (front, closer to dog) -->
+  <g transform="translate(278 322)">
+    <ellipse cx="-2" cy="8" rx="42" ry="32" fill="#C9BBA8"/>
+    <ellipse cx="4" cy="0" rx="40" ry="30" fill="url(#wool)"/>
+    <ellipse cx="14" cy="-12" rx="18" ry="15" fill="#FFFCF5"/>
+    <ellipse cx="30" cy="4" rx="15" ry="12" fill="#7A5A48"/>
+    <ellipse cx="32" cy="2" rx="11" ry="9" fill="#4A3428"/>
+    <circle cx="37" cy="0" r="2.6" fill="#1A1210"/>
+    <ellipse cx="-12" cy="28" rx="4.5" ry="8" fill="#3E2C22"/>
+    <ellipse cx="12" cy="30" rx="4.5" ry="8" fill="#3E2C22"/>
+    <circle cx="20" cy="14" r="5" fill="#E8A54B"/>
+    <circle cx="21.5" cy="12.5" r="1.8" fill="#FFE08A"/>
+  </g>
+
+  <!-- Dog — facing left (toward sheep), working-herder pose -->
+  <g transform="translate(352 296)">
+    <!-- tail (right/rear) -->
+    <ellipse cx="48" cy="-6" rx="18" ry="8" fill="#2A1F18" transform="rotate(30 48 -6)"/>
+    <ellipse cx="58" cy="-12" rx="9" ry="5" fill="#F0E6D8" transform="rotate(30 58 -12)"/>
+    <!-- body -->
+    <ellipse cx="6" cy="12" rx="54" ry="28" fill="#1A120E"/>
+    <ellipse cx="0" cy="4" rx="52" ry="26" fill="url(#dog)"/>
+    <ellipse cx="16" cy="-4" rx="20" ry="12" fill="#3D2C22" opacity="0.8"/>
+    <!-- head (left) -->
+    <ellipse cx="-42" cy="0" rx="24" ry="17" fill="#2A1F18"/>
+    <!-- ear flop -->
+    <ellipse cx="-36" cy="-16" rx="10" ry="15" fill="#2A1F18"/>
+    <ellipse cx="-36" cy="-14" rx="5.5" ry="9" fill="#C4897A"/>
+    <!-- white blaze + muzzle -->
+    <ellipse cx="-52" cy="0" rx="14" ry="11" fill="#F0E6D8"/>
+    <ellipse cx="-56" cy="4" rx="10" ry="7" fill="#D4C4B0"/>
+    <ellipse cx="-62" cy="6" rx="5.5" ry="3.5" fill="#1A1210"/>
+    <!-- eye amber -->
+    <circle cx="-46" cy="-5" r="3.8" fill="#F0C14A"/>
+    <circle cx="-47" cy="-5.5" r="1.5" fill="#1A1210"/>
+    <!-- collar -->
+    <rect x="-18" y="10" width="16" height="10" rx="3.5" fill="#F0B429"/>
+    <rect x="-18" y="10" width="16" height="3.5" rx="1.5" fill="#FFE08A" opacity="0.5"/>
+    <circle cx="-10" cy="24" r="5.5" fill="#E8A54B"/>
+    <circle cx="-9" cy="22.5" r="2" fill="#FFE08A"/>
+    <!-- white chest / paw -->
+    <ellipse cx="-14" cy="22" rx="10" ry="6" fill="#F0E6D8" opacity="0.9"/>
+    <ellipse cx="-22" cy="30" rx="7" ry="5" fill="#F0E6D8"/>
+  </g>
+</svg>
