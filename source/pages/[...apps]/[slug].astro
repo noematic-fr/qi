@@ -109,7 +109,7 @@ const tagClass = 'text-[10px] inline-flex items-center font-bold leading-sm px-1
 			<div class={proseCSS}>
 				<section class="mb-20">
 					{app.videos.map(video => (
-						<video src={video} autoplay loop muted alt="App preview video"/>
+						<video src={video} autoplay loop muted playsinline controls class="w-full rounded-md shadow-lg" title="App preview video"/>
 					))}
 					{app.screenshots.map(screenshot => (
 						<img src={screenshot.src} width={screenshot.width} height={screenshot.height} alt="App screenshot">
