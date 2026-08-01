@@ -6,7 +6,6 @@ isPaid: true
 platforms:
   - macOS
   - Windows
-  - Linux
 mainLinks:
   "Acheter — 1,99 €": "https://payhip.com/buy?link=AI2h7"
 links:
