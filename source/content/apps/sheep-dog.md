@@ -8,7 +8,7 @@ platforms:
   - Windows
   - Linux
 mainLinks:
-  "Acheter sur Payhip (1,99 €)": "https://payhip.com/b/AI2h7"
+  "Acheter sur Payhip — 1,99 €": "https://payhip.com/b/AI2h7"
 links:
   "Boutique Noematic": "https://payhip.com/noematic"
   "Notes projet": "https://git.noematic.eu/baptiste/sheeps"

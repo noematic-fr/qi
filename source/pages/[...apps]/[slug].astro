@@ -57,7 +57,7 @@ const tagClass = 'text-[10px] inline-flex items-center font-bold leading-sm px-1
 					<span class={`${tagClass} bg-orange-100 dark:bg-orange-200 text-[16px] mb-10`}>archived</span>
 				}
 				{(app.appStoreId || app.setappId || Object.keys(app.mainLinks).length > 0) &&
-					<nav class="flex flex-col sm:flex-row gap-x-4 gap-y-8 mt-2 instapaper_ignore">
+					<nav class="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3 sm:gap-4 mt-2 instapaper_ignore">
 						<>
 							{!app.isArchived && app.appStoreId &&
 								<div class="relative">
@@ -79,9 +79,9 @@ const tagClass = 'text-[10px] inline-flex items-center font-bold leading-sm px-1
 						</>
 						{Object.keys(app.mainLinks).length > 0 &&
 								<>
-									<!-- We apply a fixed size so it matches the App Store button. -->
+									<!-- min-height matches App Store badge; width grows with label (no fixed 180px clip). -->
 									{Object.entries(app.mainLinks).map(([title, url]) => (
-										<a href={url} class="text-white bg-primary-700 hover:bg-primary-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-bold rounded-lg text-xl px-6 text-center mb-2 flex justify-center items-center whitespace-nowrap px-10 py-4" style="width: 180px; height: 60px;">{title}</a>
+										<a href={url} class="text-white bg-primary-700 hover:bg-primary-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-bold rounded-lg text-lg sm:text-xl px-6 sm:px-8 py-3.5 text-center inline-flex justify-center items-center min-h-[60px] min-w-[180px] max-w-full">{title}</a>
 									))}
 								</>
 						}

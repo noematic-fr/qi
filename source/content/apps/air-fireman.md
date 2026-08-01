@@ -10,8 +10,8 @@ platforms:
   - iOS
   - android
 mainLinks:
-  "Remaster sur Payhip (4,99 €)": "https://payhip.com/b/boOuR"
-  "Classique gratuit (navigateur)": "https://airfireman.noematic.eu"
+  "Acheter remaster — 4,99 €": "https://payhip.com/b/boOuR"
+  "Classique gratuit": "https://airfireman.noematic.eu"
 links:
   "Boutique Noematic": "https://payhip.com/noematic"
   "Liste d'attente / retours": "https://app.youform.com/forms/4fqdjajy"
