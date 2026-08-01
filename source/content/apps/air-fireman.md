@@ -10,9 +10,10 @@ platforms:
   - iOS
   - android
 mainLinks:
-  "Acheter remaster — 4,99 €": "https://payhip.com/b/boOuR"
+  "Acheter remaster — 4,99 €": "https://payhip.com/buy?link=boOuR"
   "Classique gratuit": "https://airfireman.noematic.eu"
 links:
+  "Page produit Payhip": "https://payhip.com/b/boOuR"
   "Boutique Noematic": "https://payhip.com/noematic"
   "Liste d'attente / retours": "https://app.youform.com/forms/4fqdjajy"
 ---
@@ -24,7 +25,8 @@ links:
     Le classique gratuit (Impact.js, 2013) reste jouable ci-dessous dans le navigateur — sans installation.
   </p>
   <p class="mt-3 mb-0 flex flex-col sm:flex-row gap-2">
-    <a href="https://payhip.com/b/boOuR" class="inline-block text-center rounded-xl bg-emerald-700 px-4 py-2 text-sm font-medium text-white hover:bg-emerald-800">Acheter le remaster sur Payhip</a>
+    <a href="https://payhip.com/buy?link=boOuR" class="inline-block text-center rounded-xl bg-emerald-700 px-4 py-2 text-sm font-medium text-white hover:bg-emerald-800">Acheter remaster — 4,99 €</a>
+    <a href="https://payhip.com/b/boOuR" class="inline-block text-center rounded-xl border border-emerald-700/40 px-4 py-2 text-sm font-medium hover:bg-emerald-100/50 dark:hover:bg-emerald-900/40">Page produit Payhip</a>
     <a href="https://airfireman.noematic.eu" class="inline-block text-center rounded-xl border border-emerald-700/40 px-4 py-2 text-sm font-medium hover:bg-emerald-100/50 dark:hover:bg-emerald-900/40">Jouer au classique gratuit</a>
   </p>
 </div>
@@ -51,9 +53,9 @@ Même fantasy feux de forêt, moteur actualisé :
 - Interface FR / EN  
 - Builds : **macOS** (universel) et **Windows** 64 bits  
 
-<a href="https://payhip.com/b/boOuR" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Sur Payhip — 4,99 €</a>
+<a href="https://payhip.com/buy?link=boOuR" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Acheter remaster — 4,99 €</a>
 
-<p class="text-sm opacity-80">Le prix concerne le téléchargement remaster. Le classique navigateur reste gratuit. Aussi dans la <a href="https://payhip.com/noematic">boutique Noematic</a>. Tip / liste d’attente toujours bienvenus.</p>
+<p class="text-sm opacity-80">Le prix concerne le téléchargement remaster. Le classique navigateur reste gratuit. Lire la fiche d’abord ? <a href="https://payhip.com/b/boOuR">Page produit Payhip</a> · <a href="https://payhip.com/noematic">Boutique Noematic</a>. Tip / liste d’attente toujours bienvenus.</p>
 
 ### Contrôles (remaster, par défaut)
 

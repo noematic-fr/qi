@@ -8,8 +8,9 @@ platforms:
   - Windows
   - Linux
 mainLinks:
-  "Acheter sur Payhip — 1,99 €": "https://payhip.com/b/AI2h7"
+  "Acheter — 1,99 €": "https://payhip.com/buy?link=AI2h7"
 links:
+  "Page produit Payhip": "https://payhip.com/b/AI2h7"
   "Boutique Noematic": "https://payhip.com/noematic"
   "Notes projet": "https://git.noematic.eu/baptiste/sheeps"
 ---
@@ -20,8 +21,9 @@ links:
     Un court jeu <strong>Godot</strong> desktop : guidez le chien, rassemblez les moutons, fermez le portail du parc, et battez les temps or / argent / bronze.
     Douze épreuves de campagne (dont tutoriels) plus des cartes aléatoires en mode endless.
   </p>
-  <p class="mt-3 mb-0">
-    <a href="https://payhip.com/b/AI2h7" class="inline-block text-center rounded-xl bg-lime-700 px-4 py-2 text-sm font-medium text-white hover:bg-lime-800">Acheter sur Payhip — 1,99 €</a>
+  <p class="mt-3 mb-0 flex flex-col sm:flex-row sm:items-center gap-2">
+    <a href="https://payhip.com/buy?link=AI2h7" class="inline-block text-center rounded-xl bg-lime-700 px-4 py-2 text-sm font-medium text-white hover:bg-lime-800">Acheter — 1,99 €</a>
+    <a href="https://payhip.com/b/AI2h7" class="inline-block text-center rounded-xl border border-lime-700/40 px-4 py-2 text-sm font-medium hover:bg-lime-100/50 dark:hover:bg-lime-900/40">Page produit Payhip</a>
   </p>
 </div>
 
@@ -35,9 +37,9 @@ Sheep Dog est un petit score-attack pastoral : pas de simu de ferme, pas de mult
 
 Builds desktop **macOS** et **Windows** (Godot 4). Téléchargement immédiat après achat.
 
-<a href="https://payhip.com/b/AI2h7" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Payhip — 1,99 €</a>
+<a href="https://payhip.com/buy?link=AI2h7" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Acheter — 1,99 €</a>
 
-<p class="text-sm opacity-80">Prix « café » en achat unique. Aussi listé dans la <a href="https://payhip.com/noematic">boutique Noematic</a>.</p>
+<p class="text-sm opacity-80">Prix « café » en achat unique. Lire la fiche d’abord ? <a href="https://payhip.com/b/AI2h7">Page produit Payhip</a> · <a href="https://payhip.com/noematic">Boutique Noematic</a>.</p>
 
 ### Fonctionnalités
 
