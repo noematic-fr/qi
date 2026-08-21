@@ -1,4 +1,4 @@
-const CACHE = "pioche-v3";
+const CACHE = "pioche-v4";
 const ASSETS = [
   "./",
   "./index.html",
@@ -14,6 +14,7 @@ const ASSETS = [
   "./img/tactical-night.jpg",
   "./img/deadline.jpg",
   "./img/adc.jpg",
+  "./img/adc-visage.jpg",
   "./img/carillon.jpg",
   "./img/chair.jpg",
 ];
