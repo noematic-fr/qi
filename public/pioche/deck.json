@@ -1,0 +1,69 @@
+{
+  "title": "Pioche",
+  "prompt": "Choisis celle qui te plaît.",
+  "cards": [
+    {
+      "id": "sheeps",
+      "image": "img/sheeps.jpg",
+      "kind": "jeu",
+      "title": "Sheep Dog",
+      "blurb": "Un mini-jeu de troupeau. Une run, un enclos, le temps d’un café.",
+      "link": "https://payhip.com/b/AI2h7",
+      "cta": "Payhip · 1,99 €"
+    },
+    {
+      "id": "air-fireman",
+      "image": "img/canadair.jpg",
+      "kind": "jeu",
+      "title": "Air Fireman",
+      "blurb": "Canadair, vent, forêts. Remaster Godot — larguer l’eau, sauver le village.",
+      "link": "https://payhip.com/b/boOuR",
+      "cta": "Payhip · 4,99 €"
+    },
+    {
+      "id": "fire-command",
+      "image": "img/tactical-night.jpg",
+      "kind": "jeu",
+      "title": "Fire Command",
+      "blurb": "Le même univers, vue tactique : camions, hélico, école à protéger. Pas encore en vente.",
+      "link": "",
+      "cta": ""
+    },
+    {
+      "id": "deadline",
+      "image": "img/deadline.jpg",
+      "kind": "jeu",
+      "title": "Deadline Inc.",
+      "blurb": "Papers, Please × tableau Jira. Un sprint de 5 jours, 8 décisions. Prototype, pas de boutique.",
+      "link": "",
+      "cta": ""
+    },
+    {
+      "id": "adc",
+      "image": "img/adc.jpg",
+      "kind": "livre",
+      "title": "Algorithmes du Chaos",
+      "blurb": "Dystopie FR : l’IA ne surveille plus — elle réécrit. Plume René Martin Desbois.",
+      "link": "https://renelamartre.com",
+      "cta": "Site auteur"
+    },
+    {
+      "id": "carillon",
+      "image": "img/carillon.jpg",
+      "kind": "livre",
+      "title": "Carillon",
+      "blurb": "Conte illustré. Une cloche, une ville, des aquarelles.",
+      "link": "https://renelamartre.com",
+      "cta": "Site auteur"
+    },
+    {
+      "id": "chair",
+      "image": "img/chair.jpg",
+      "kind": "livre",
+      "title": "Revivre — La Chair",
+      "blurb": "Cycle SF. Tome 1 : le corps. Pas un pitch lab.",
+      "link": "https://renelamartre.com",
+      "cta": "Site auteur"
+    }
+  ]
+}

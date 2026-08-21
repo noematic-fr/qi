@@ -1,0 +1,17 @@
+{
+  "name": "Pioche",
+  "short_name": "Pioche",
+  "description": "Trois images. Une préférence. Le verso.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#14110d",
+  "theme_color": "#14110d",
+  "icons": [
+    {
+      "src": "img/sheeps.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}
