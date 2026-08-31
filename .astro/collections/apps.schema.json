@@ -38,7 +38,8 @@
           "visionOS",
           "android",
           "Linux",
-          "Windows"
+          "Windows",
+          "Web"
         ]
       }
     },
@@ -59,6 +60,14 @@
     "isPaid": {
       "default": false,
       "type": "boolean"
+    },
+    "pricing": {
+      "type": "string",
+      "enum": [
+        "paid",
+        "free",
+        "building"
+      ]
     },
     "isMenuBarApp": {
       "default": false,

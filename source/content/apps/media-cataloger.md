@@ -1,29 +1,19 @@
 ---
 title: Media Cataloger
-subtitle: Recherche et Analyse de votre Structure de Fichiers Hors Ligne
+subtitle: Sachez où vivent vos fichiers — même quand le disque est débranché
 pubDate: 2025-01-01
 isPaid: true
+showSupportLink: false
 platforms:
   - macOS
-  - iOS
-  - android
   - Linux
   - Windows
-#appStoreId: 6465745322
+redirectUrl: https://noematic.fr/media-cataloger
 ---
 
-> Les données sont le pétrole du 21ème siècle, et l'analyse est le moteur à combustion.
-— Peter Sondergaard
+Beta payante **0.2** — licences par email. Les zips publics 0.0.1 sont retirés.
 
-### Version de test - gratuit limité à 1 disque
-
-<a href="https://qi.noematic.eu/apps/media-cataloger/MediaCataloger-0.0.1-12.app.zip" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Apple macos Intel 64 bits</a>
-
-
-<a href="https://qi.noematic.eu/apps/media-cataloger/MediaCataloger-0.0.1-12.exe.zip" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Windows 64 bits</a>
-
-
-<a href="https://qi.noematic.eu/apps/media-cataloger/MediaCataloger-0.0.1-12.tar.xz" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Linux 64 bits</a>
+<a href="https://noematic.fr/media-cataloger" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Voir les tarifs et demander une licence</a>
 
 ### Fonctionnalités
 
@@ -80,5 +70,3 @@ Que vous utilisiez Windows, macOS, ou Linux, même iOS et Android, Media Catalog
 #### Est-ce que c'est open source ?
 
 Certaines parties.
-
-<a href="https://forum.qi.noematic.eu" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Joindre le forum</a>

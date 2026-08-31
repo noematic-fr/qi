@@ -41,7 +41,7 @@ const tagClass = 'text-[10px] inline-flex items-center font-bold leading-sm px-1
 									{app.isNew && (
 										<span class={`${tagClass} bg-teal-100 dark:bg-teal-200`}>new!</span>
 									)}
-									<span class={`${tagClass} bg-gray-200/80 dark:bg-gray-200`}>{app.isPaid ? 'paid' : 'free'}</span>
+									<span class={`${tagClass} bg-gray-200/80 dark:bg-gray-200`}>{app.pricing ?? (app.isPaid ? 'paid' : 'free')}</span>
 									{app.repoUrl && (
 										<span class={`${tagClass} bg-gray-200/80 dark:bg-gray-200`}>open-source</span>
 									)}
