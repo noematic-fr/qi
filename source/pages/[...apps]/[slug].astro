@@ -46,7 +46,7 @@ const softwareJsonLd = {
 		name: 'Noematic',
 		url: 'https://noematic.eu',
 	},
-	...(!app.isPaid ? {offers: {'@type': 'Offer', price: '0', priceCurrency: 'EUR'}} : {}),
+	...(app.isPaid ? {} : {offers: {'@type': 'Offer', price: '0', priceCurrency: 'EUR'}}),
 };
 
 // Copied from `apps.astro`.

@@ -52,7 +52,8 @@
 		],
 		"ignores": [
 			"source/content.config.ts",
-			"public/count.min.js"
+			"public/count.min.js",
+			"public/pioche/**"
 		],
 		"overrides": [
 			{
