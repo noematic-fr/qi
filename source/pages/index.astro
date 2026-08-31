@@ -7,6 +7,7 @@ const meta = {
 	title: `Apps et jeux indie — ${SITE.name}`,
 	description: SITE.description,
 	image: SITE.defaultOgImage,
+	lcpImage: '/apple-touch-icon.webp',
 };
 
 const apps = await fetchApps();
@@ -21,7 +22,7 @@ const tagClass = 'text-[10px] inline-flex items-center font-bold leading-sm px-1
 			<header>
 				<!-- TODO: Make title components -->
 				<h1 class="text-center text-4xl md:text-6xl font-light leading-tighter tracking-tighter mb-8 md:mb-16 font-heading">
-					<center><img src="apple-touch-icon.webp" alt="Qi"></center><br>
+					<img src="/apple-touch-icon.webp" alt="Qi" width="180" height="180" class="mx-auto w-[180px] h-[180px]" fetchpriority="high" decoding="async">
 					Qualitatif Indé<br>
 					<span class="bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-secondary-500 pr-[0.025em] mr-[-0.025em]">applications</span>
 					&
@@ -33,7 +34,7 @@ const tagClass = 'text-[10px] inline-flex items-center font-bold leading-sm px-1
 					apps.map(app => (
 						<a href={app.url} class="flex py-6 px-2 sm:p-6 bg-white dark:bg-black/20 sm:rounded-xl shadow-md dark:shadow-lg hover:shadow-xl dark:hover:sm:shadow-indigo-500/20 transition duration-500 dark:sm:border dark:border-slate-800">
 							<div class="flex-initial flex-shrink-0 justify-center mr-2 sm:mr-3">
-								<img src={app.iconUrl} width="128" height="128" class={app.hasIOSAppIcon ? 'p-[12px]' : ''} alt={app.title}>
+								<img src={app.icon256Url} srcset={`${app.icon256Url} 256w, ${app.iconUrl} 512w`} sizes="128px" width="128" height="128" class={`w-32 h-32 object-contain ${app.hasIOSAppIcon ? 'p-[12px]' : ''}`} alt={app.title} loading="lazy" decoding="async">
 							</div>
 							<div class="flex flex-col justify-center my-3 mr-2 sm:mt-[-1px]">
 								<div class="mb-0.5 text-2xl sm:text-3xl font-bold">{app.title}</div>

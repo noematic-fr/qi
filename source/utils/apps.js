@@ -68,6 +68,7 @@ const normalizeApps = async app => {
 		url: data.redirectUrl ?? `/${id}`,
 		isRedirect: data.redirectUrl !== undefined,
 		iconUrl: `/apps/${id}/icon.webp`,
+		icon256Url: `/apps/${id}/icon-256.webp`,
 		// We can use `forceHasiOSAppIcon` for both true/false override.
 		hasIOSAppIcon: data.forceHasIosAppIcon ?? ((data.platforms.includes('iOS') || data.platforms.includes('watchOS')) && !data.platforms.includes('macOS')),
 		isNew: pubDate > date30DaysAgo,

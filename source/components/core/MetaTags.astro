@@ -6,6 +6,7 @@ const {
 	description = SITE.description,
 	image: _image,
 	appStoreId,
+	lcpImage,
 } = Astro.props;
 
 const path = Astro.url.pathname.replace(/\.html$/, '') || '/';
@@ -53,5 +54,6 @@ const ogImage = ogPath ? new URL(ogPath, SITE.origin).href : undefined;
 <link rel="alternate" type="application/rss+xml" title="Qi — New Repos" href="/rss-repos.xml">
 <link rel="icon" href="/apple-touch-icon.png" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+{lcpImage && <link rel="preload" as="image" href={lcpImage} type="image/webp" fetchpriority="high">}
 
 <script data-goatcounter="https://qi.fr.gc.noematic.eu/count" async src="/count.min.js"></script>
