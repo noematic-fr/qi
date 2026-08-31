@@ -31,15 +31,34 @@ const meta = {
 
 const {title: appTitle, appStoreUrl} = app;
 
+const pageUrl = app.redirectUrl
+	?? new URL(app.url.startsWith('http') ? app.url : app.url, SITE.origin).href;
+const softwareJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'SoftwareApplication',
+	name: app.title,
+	description: app.subtitle,
+	url: pageUrl,
+	image: new URL(app.iconUrl, SITE.origin).href,
+	operatingSystem: (app.platforms ?? []).join(', '),
+	author: {
+		'@type': 'Organization',
+		name: 'Noematic',
+		url: 'https://noematic.eu',
+	},
+	...(!app.isPaid ? {offers: {'@type': 'Offer', price: '0', priceCurrency: 'EUR'}} : {}),
+};
+
 // Copied from `apps.astro`.
 const tagClass = 'text-[10px] inline-flex items-center font-bold leading-sm px-1.5 text-black/70 dark:text-black rounded-lg';
 ---
 
 <Layout {meta}>
+	<script type="application/ld+json" set:html={JSON.stringify(softwareJsonLd)} />
 	<section class="max-w-3xl py-8 sm:py-16 lg:py-20 mx-auto lg:-mt-10 mb-10">
 		<article>
 			<header class="flex flex-col items-center text-center px-4 sm:px-6 mb-40">
-				<img src={app.iconUrl} width="224" height="224" class={`${app.hasIOSAppIcon ? 'p-[20px]' : ''} mb-3`}>
+				<img src={app.iconUrl} width="224" height="224" class={`${app.hasIOSAppIcon ? 'p-[20px]' : ''} mb-3`} alt="">
 				<h1 class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
 					{app.title}
 				</h1>

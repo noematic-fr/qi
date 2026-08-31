@@ -23,7 +23,20 @@ export default defineConfig({
 	//	'/lock-screen-one': '/any-text',
 	},
 	integrations: [
-		sitemap(),
+		sitemap({
+			serialize(item) {
+				const path = new URL(item.url).pathname;
+				return {
+					url: item.url,
+					lastmod: new Date().toISOString(),
+					links: [
+						{lang: 'fr', url: `https://qi.noematic.fr${path}`},
+						{lang: 'en', url: `https://qi.noematic.eu${path}`},
+						{lang: 'x-default', url: `https://qi.noematic.eu${path}`},
+					],
+				};
+			},
+		}),
 	],
 	markdown: {
 		remarkPlugins: [

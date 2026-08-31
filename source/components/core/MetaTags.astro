@@ -3,14 +3,16 @@ import {SITE} from '~/config.mjs';
 
 const {
 	title = SITE.name,
-	description = '',
+	description = SITE.description,
 	image: _image,
 	appStoreId,
 } = Astro.props;
 
-const image = _image && new URL(_image, Astro.site);
-const canonicalURL = new URL(Astro.url.pathname.replace(/\.html$/, ''), Astro.site);
-
+const path = Astro.url.pathname.replace(/\.html$/, '') || '/';
+const canonicalURL = new URL(path, SITE.origin);
+const alternateURL = new URL(path, SITE.alternateOrigin);
+const ogPath = _image || SITE.defaultOgImage;
+const ogImage = ogPath ? new URL(ogPath, SITE.origin).href : undefined;
 ---
 
 <meta charset="utf-8">
@@ -18,27 +20,38 @@ const canonicalURL = new URL(Astro.url.pathname.replace(/\.html$/, ''), Astro.si
 <title>{title}</title>
 <meta name="description" content={description}>
 <meta name="author" content="Noematic">
-<meta property="og:title" content={title} />
-<meta property="og:type" content="website" />
-<meta property="og:url" content={canonicalURL.toString()} />
-<meta property="og:image" content={_image && image.toString()} />
+<link rel="canonical" href={canonicalURL.href}>
+<link rel="alternate" hreflang={SITE.locale} href={canonicalURL.href}>
+<link rel="alternate" hreflang={SITE.alternateLocale} href={alternateURL.href}>
+<link rel="alternate" hreflang="x-default" href={new URL(path, 'https://qi.noematic.eu').href}>
+<meta property="og:title" content={title}>
+<meta property="og:type" content="website">
+<meta property="og:url" content={canonicalURL.href}>
+<meta property="og:site_name" content={SITE.name}>
+<meta property="og:description" content={description}>
+<meta property="og:locale" content={SITE.locale === 'fr' ? 'fr_FR' : 'en_US'}>
+{ogImage && <meta property="og:image" content={ogImage}>}
 <meta name="twitter:site" content="@noematic_eu">
 <meta name="twitter:creator" content="@noematic_eu">
+<meta name="twitter:title" content={title}>
 <meta name="twitter:description" content={description}>
-<meta name="x-build-time" content={(new Date()).toUTCString()}>
+{ogImage && <meta name="twitter:image" content={ogImage}>}
 
 {appStoreId ? (
-	<meta name="apple-itunes-app" content={`app-id=${appStoreId}`}>
-	<meta name="twitter:card" content="app">
-	<meta name="twitter:app:id:iphone" content={appStoreId}>
+	<>
+		<meta name="apple-itunes-app" content={`app-id=${appStoreId}`}>
+		<meta name="twitter:card" content="app">
+		<meta name="twitter:app:id:iphone" content={appStoreId}>
+	</>
 ) : (
-	<meta name="twitter:card" content="summary">
+	<meta name="twitter:card" content={ogImage ? 'summary' : 'summary'}>
 )}
 
 <link rel="sitemap" href="/sitemap-index.xml">
 <link rel="alternate" type="application/rss+xml" title="Qi — Blog" href="/rss.xml">
 <link rel="alternate" type="application/rss+xml" title="Qi — New Apps" href="/rss-apps.xml">
 <link rel="alternate" type="application/rss+xml" title="Qi — New Repos" href="/rss-repos.xml">
-<link rel="icon" href="apple-touch-icon.webp">
+<link rel="icon" href="/apple-touch-icon.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 <script data-goatcounter="https://qi.fr.gc.noematic.eu/count" async src="/count.min.js"></script>

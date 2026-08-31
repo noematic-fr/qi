@@ -19,8 +19,8 @@ export const GET = async context => {
 	}));
 
 	return rss({
-		title: 'Sindre Sorhus — New Repos',
-		description: 'Recently created GitHub repos by Sindre Sorhus',
+		title: 'Qi — New Repos',
+		description: 'Recently created GitHub repos by Noematic',
 		site: context.site,
 		items,
 		trailingSlash: false,

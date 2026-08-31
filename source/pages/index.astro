@@ -4,8 +4,9 @@ import Layout from '~/layouts/PageLayout.astro';
 import {fetchApps} from '~/utils/apps.js';
 
 const meta = {
-	title: `Apps & Games — ${SITE.name}`,
-	description: 'Produced Apps & Games',
+	title: `Apps et jeux indie — ${SITE.name}`,
+	description: SITE.description,
+	image: SITE.defaultOgImage,
 };
 
 const apps = await fetchApps();
@@ -27,7 +28,7 @@ const tagClass = 'text-[10px] inline-flex items-center font-bold leading-sm px-1
 					<span class="bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-secondary-500 pr-[0.025em] mr-[-0.025em]">jeux</span>
 				</h1>
 			</header>
-			<section data-nosnippet class="mx-auto grid sm:gap-6 grid-cols-1 lg:grid-cols-2 my-12 dark:text-white">
+			<section class="mx-auto grid sm:gap-6 grid-cols-1 lg:grid-cols-2 my-12 dark:text-white">
 				{
 					apps.map(app => (
 						<a href={app.url} class="flex py-6 px-2 sm:p-6 bg-white dark:bg-black/20 sm:rounded-xl shadow-md dark:shadow-lg hover:shadow-xl dark:hover:sm:shadow-indigo-500/20 transition duration-500 dark:sm:border dark:border-slate-800">
