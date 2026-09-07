@@ -2,6 +2,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {defineConfig} from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import {unified} from '@astrojs/markdown-remark';
 import remarkCustomHeaderId from 'remark-custom-header-id';
 import {SITE} from './source/config.mjs';
 
@@ -39,14 +40,9 @@ export default defineConfig({
 		}),
 	],
 	markdown: {
-		remarkPlugins: [
-			remarkCustomHeaderId,
-		],
-		// TODO
-		// rehypePlugins: [
-		// 	rehypeHeadingIds,
-		// 	[rehypeAutolinkHeadings, {behavior: 'wrap'}],
-		// ]
+		processor: unified({
+			remarkPlugins: [remarkCustomHeaderId],
+		}),
 	},
 	vite: {
 		resolve: {
