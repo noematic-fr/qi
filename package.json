@@ -12,7 +12,29 @@
 		"test": "xo && astro build"
 	},
 	"overrides": {
-		"@astrojs/markdown-remark": "^7.3.0"
+		"@astrojs/markdown-remark": "^7.3.0",
+		"ajv@6": "6.15.0",
+		"ajv@8": "8.20.0",
+		"baseline-browser-mapping": "2.11.21",
+		"brace-expansion@1": "1.1.18",
+		"brace-expansion@2": "2.1.4",
+		"brace-expansion@5": "5.0.9",
+		"browserslist": "4.28.9",
+		"fast-uri": "3.1.7",
+		"fflate": "0.8.3",
+		"flatted": "3.4.4",
+		"lodash": "4.18.1",
+		"lodash-es": "4.18.1",
+		"minimatch@3": "3.1.5",
+		"minimatch@9": "9.0.9",
+		"picomatch@2": "2.3.2",
+		"postcss-selector-parser@6": "6.1.4",
+		"postcss-selector-parser@7": "7.1.6",
+		"serialize-javascript": "7.1.1",
+		"svgo@3": "3.3.5",
+		"svgo@4": "4.1.0",
+		"webpack": "5.110.3",
+		"yaml": "2.9.0"
 	},
 	"devDependencies": {
 		"@astrojs/markdown-remark": "^7.3.0",
