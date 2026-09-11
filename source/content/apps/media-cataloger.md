@@ -1,6 +1,6 @@
 ---
 title: Media Cataloger
-subtitle: Sachez où vivent vos fichiers — même quand le disque est débranché
+subtitle: Version historique 0.0.1 — Windows, Linux, Mac Intel
 pubDate: 2025-01-01
 isPaid: true
 showSupportLink: false
@@ -11,10 +11,11 @@ platforms:
 ---
 
 <div class="mb-6 rounded-2xl border border-amber-600/40 bg-amber-50 px-5 py-4 text-amber-950 dark:border-amber-400/30 dark:bg-amber-950/40 dark:text-amber-100">
-  <p class="m-0 font-medium">Avertissement avant la prochaine version</p>
+  <p class="m-0 font-medium">Version historique 0.0.1</p>
   <p class="mt-2 mb-0 text-sm opacity-90">
-    Le build public reste <strong>0.0.1</strong> (gratuit, limité à 1 disque). Une prochaine version est en préparation. Nous préviendrons ici avant de remplacer ces téléchargements.
-    Les licences beta 0.2 (par email) sont sur <a href="https://noematic.fr/media-cataloger">Noematic</a>.
+    Le catalogueur s’appelle maintenant <a href="/diskshelf">DiskShelf</a>. Cette page garde les zips publics <strong>0.0.1</strong> (gratuit, 1 disque) — Windows, Linux, Mac Intel — jusqu’à un zip DiskShelf.
+    <strong>Toute licence déjà envoyée</strong> (beta 0.2 par email) et toute nouvelle demande restent valables pour DiskShelf <em>et</em> pour ce build Go, pas seulement pour le Swift Mac.
+    Pour une licence ou la newsletter : <a href="mailto:contact@noematic.eu?subject=DiskShelf">nous écrire</a> ou s’abonner plus bas.
   </p>
 </div>
 
@@ -30,7 +31,7 @@ platforms:
 
 ### Fonctionnalités
 
-Media Cataloger répertorie vos médias et appareils dans un catalogue local et hors ligne.
+Media Cataloger répertorie vos médias et appareils dans un catalogue local et hors ligne. C’est le même moteur que <a href="/diskshelf">DiskShelf</a>.
 
 #### Accès à la Structure de Disque Locale et Hors Ligne
 
@@ -74,11 +75,25 @@ Profitez d'une performance améliorée grâce à la prise en charge native des m
 
 #### Compatibilité Multi-Plateforme
 
-Que vous utilisiez Windows, macOS, ou Linux, même iOS et Android, Media Cataloger fonctionne de manière fluide sur toutes les principales plateformes.
+Windows, macOS et Linux. iOS et Android ne font pas partie de cette offre.
 
-<a href="https://app.youform.com/forms/18nyuesk" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Restez informé</a>
+<div id="newsletter">
+
+<script async data-uid="15784f62e4" src="https://noematic.kit.com/15784f62e4/index.js"></script>
+
+</div>
+
+<a href="mailto:contact@noematic.eu?subject=DiskShelf" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Nous écrire</a>
 
 ### Questions Fréquemment Posées {#faq}
+
+#### Une licence Media Cataloger marchera-t-elle avec DiskShelf ?
+
+Oui. **Toute demande, et toute licence déjà envoyée** (beta 0.2 par email), ouvre DiskShelf. Même fichier. Un acheteur de mars n’est pas hors jeu.
+
+#### Ma licence Windows / Linux compte-t-elle seulement pour le Mac Swift ?
+
+Non. Elle vaut pour le **build Go** (nmcui) sur Windows et Linux, et pour les deux apps Mac (Swift + nmcui).
 
 #### Est-ce que c'est open source ?
 
