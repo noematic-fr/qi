@@ -96,6 +96,6 @@ Utilisez ces révisions pour évaluer si vos conventions de nommage, vos structu
 
 Combien de disques avez-vous ? Comment faites-vous pour retrouver un fichier ? Comment analyser le contenu efficacement ?
 
-Noematic y travaille : [Media Cataloger](/media-cataloger)
+Noematic le catalogue en local : [Media Cataloger 2](/media-cataloger-2). Les zips publics 0.0.1 restent sur [Media Cataloger](/media-cataloger).
 
 [Publié sur LinkedIn](https://www.linkedin.com/pulse/arr%C3%AAtez-de-perdre-la-trace-vos-fichiers-transformez-votre-gestion-ldgbe/?trackingId=AkZmz7M4TuqDJkj9Q4aR%2Fw%3D%3D)

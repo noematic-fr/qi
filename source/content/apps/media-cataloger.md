@@ -1,100 +1,109 @@
 ---
 title: Media Cataloger
-subtitle: Version historique 0.0.1 — Windows, Linux, Mac Intel
-pubDate: 2025-01-01
-isPaid: true
+subtitle: Téléchargement gratuit — un disque — Windows, Linux, Mac Intel
+pubDate: 2025-02-20
+isPaid: false
+pricing: free
+badge: gratuit
 showSupportLink: false
 platforms:
   - macOS
-  - Linux
   - Windows
+  - Linux
+mainLinks:
+  "Nous écrire": "mailto:contact@noematic.eu?subject=Media%20Cataloger%202"
+links:
+  "Media Cataloger 2": "https://qi.noematic.fr/media-cataloger-2"
 ---
 
 <div class="mb-6 rounded-2xl border border-amber-600/40 bg-amber-50 px-5 py-4 text-amber-950 dark:border-amber-400/30 dark:bg-amber-950/40 dark:text-amber-100">
-  <p class="m-0 font-medium">Version historique 0.0.1</p>
+  <p class="m-0 font-medium">Téléchargement gratuit, un disque</p>
   <p class="mt-2 mb-0 text-sm opacity-90">
-    Le catalogueur s’appelle maintenant <a href="/diskshelf">DiskShelf</a>. Cette page garde les zips publics <strong>0.0.1</strong> (gratuit, 1 disque) — Windows, Linux, Mac Intel — jusqu’à un zip DiskShelf.
-    <strong>Toute licence déjà envoyée</strong> (beta 0.2 par email) et toute nouvelle demande restent valables pour DiskShelf <em>et</em> pour ce build Go, pas seulement pour le Swift Mac.
-    Pour une licence ou la newsletter : <a href="mailto:contact@noematic.eu?subject=DiskShelf">nous écrire</a> ou s’abonner plus bas.
+    Cette page est le téléchargement gratuit, limité à un disque — Windows, Linux, Mac Intel. La version en cours est <a href="/media-cataloger-2">Media Cataloger 2</a>.
+    Une licence déjà envoyée fonctionne encore là-bas. La liste du 15 octobre est sur la page Media Cataloger 2. <a href="mailto:contact@noematic.eu?subject=Media%20Cataloger%202">Écrivez-nous</a> s’il faut renvoyer le fichier.
   </p>
 </div>
 
-### Version de test — gratuit, limité à 1 disque
+### Version 0.0.1 — gratuit, limité à 1 disque
 
-<a href="https://qi.noematic.eu/apps/media-cataloger/MediaCataloger-0.0.1-12.app.zip" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Apple macos Intel 64 bits</a>
-
-
-<a href="https://qi.noematic.eu/apps/media-cataloger/MediaCataloger-0.0.1-12.exe.zip" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Windows 64 bits</a>
+<a href="https://qi.noematic.eu/apps/media-cataloger/MediaCataloger-0.0.1-12.app.zip" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Mac Intel</a>
 
 
-<a href="https://qi.noematic.eu/apps/media-cataloger/MediaCataloger-0.0.1-12.tar.xz" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Linux 64 bits</a>
+<a href="https://qi.noematic.eu/apps/media-cataloger/MediaCataloger-0.0.1-12.exe.zip" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Windows</a>
+
+
+<a href="https://qi.noematic.eu/apps/media-cataloger/MediaCataloger-0.0.1-12.tar.xz" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Linux</a>
+
+Media Cataloger 0.0.1 répertorie vos disques dans un catalogue local. Une fois un volume indexé, vous parcourez son arborescence, cherchez des fichiers et voyez qui prend de la place — même quand le disque n’est plus branché. Ce n’est pas un DAM, pas iTunes, pas un éditeur EXIF, pas un outil de sauvegarde : une étagère.
+
+Gratuit, limité à un disque : Mac Intel, Windows, Linux. [Media Cataloger 2](/media-cataloger-2) est la version en cours.
 
 ### Fonctionnalités
 
-Media Cataloger répertorie vos médias et appareils dans un catalogue local et hors ligne. C’est le même moteur que <a href="/diskshelf">DiskShelf</a>.
+#### Accès à la structure de disque, locale et hors ligne
 
-#### Accès à la Structure de Disque Locale et Hors Ligne
+Même déconnecté, vous consultez l’arborescence, les dates de modification et les tailles.
 
-Même quand un disque n'est pas connecté, vous pouvez consulter sa structure, naviguer dans son contenu et accéder à des informations détaillées sur les fichiers comme les dates de modification et les tailles.
+#### Vue instantanée du disque
 
-#### Vue Instantanée du Disque
+Espace libre d’un coup d’œil.
 
-Vérifiez rapidement combien d'espace libre est disponible sur chaque lecteur d'un coup d'œil, y compris les disques locaux et distants.
+#### Visualiser la consommation de l’espace
 
-#### Visualiser la Consommation de l'Espace Disque
+Voyez quels dossiers et fichiers occupent le plus de place, pour décider ce qu’il faut garder.
 
-Voyez quels dossiers et fichiers occupent le plus d'espace avec des visualisations intuitives montrant le pourcentage d'utilisation du disque, afin de prendre des décisions éclairées sur ce qu'il faut conserver ou supprimer.
+#### Recherche de fichiers
 
-#### Recherche de Fichiers
+Par nom ou par extension, sur ce seul disque — connecté ou non.
 
-Localisez facilement des fichiers par extension ou par nom sur tous vos disques catalogués, qu'ils soient connectés ou non.
+#### Détection de fichiers dupliqués
 
-#### Cataloguer des disques de n'importe où avec SSH
+Copies sur ce même disque. Les copies entre plusieurs disques sont dans [Media Cataloger 2](/media-cataloger-2).
 
-En utilisant le protocole Secure Shell, Media Cataloger peut cataloguer des médias depuis des ordinateurs distants.
+#### Listes de duplicatas personnalisables
 
-#### Détection de Fichiers Dupliqués
+Par sujet, propriétaire, ou le critère que vous choisissez.
 
-Trouvez sans effort les fichiers en double sur le même disque ou sur plusieurs disques, vous aidant à économiser de l'espace et à mieux organiser vos fichiers.
+#### Recherche de fichiers uniques
 
-#### Listes de Duplicatas Personnalisables
+Un fichier qui n’apparaît qu’une fois sur ce disque. Chercher entre plusieurs disques se fait dans [Media Cataloger 2](/media-cataloger-2).
 
-Organisez les duplicatas par sujet, propriétaire ou tout autre critère de votre choix.
+#### Suppression des doublons inutiles
 
-#### Recherche de Fichiers Uniques
+Faire de la place en retirant les copies en trop.
 
-Identifiez les fichiers qui n'existent que sur un seul disque et ne sont pas dupliqués ailleurs.
+#### Gros catalogues
 
-#### Suppression des Doublons Inutiles
+Un gros catalogue reste utilisable.
 
-Libérez de l'espace disque en supprimant facilement les copies redondantes de fichiers.
-
-#### Optimisé pour les Multi-Processeurs
-
-Profitez d'une performance améliorée grâce à la prise en charge native des multi-processeurs, permettant de gérer facilement des catalogues de fichiers volumineux.
-
-#### Compatibilité Multi-Plateforme
+#### Compatibilité multi-plateforme
 
 Windows, macOS et Linux. iOS et Android ne font pas partie de cette offre.
 
-<div id="newsletter">
+La liste du 15 octobre, et le moyen de nous écrire, sont sur <a href="/media-cataloger-2">Media Cataloger 2</a>.
 
-<script async data-uid="15784f62e4" src="https://noematic.kit.com/15784f62e4/index.js"></script>
+### Questions fréquentes {#faq}
 
-</div>
+#### Media Cataloger ou Media Cataloger 2 ?
 
-<a href="mailto:contact@noematic.eu?subject=DiskShelf" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Nous écrire</a>
+**Une suite, deux pages.** Cette page est le téléchargement gratuit, limité à un disque. <a href="/media-cataloger-2">Media Cataloger 2</a> est le téléchargement prévu le 15 octobre 2026. Ce n’est pas une deuxième app à acheter.
 
-### Questions Fréquemment Posées {#faq}
+#### J’ai déjà une licence ?
 
-#### Une licence Media Cataloger marchera-t-elle avec DiskShelf ?
+Oui. Le fichier déjà envoyé fonctionne encore. On le colle une fois dans l’application du 15 octobre.
 
-Oui. **Toute demande, et toute licence déjà envoyée** (beta 0.2 par email), ouvre DiskShelf. Même fichier. Un acheteur de mars n’est pas hors jeu.
+#### Un seul fichier marche-t-il sur Mac, Windows et Linux ?
 
-#### Ma licence Windows / Linux compte-t-elle seulement pour le Mac Swift ?
+Oui, dans l’application du 15 octobre. Cette page reste le téléchargement gratuit, limité à un disque.
 
-Non. Elle vaut pour le **build Go** (nmcui) sur Windows et Linux, et pour les deux apps Mac (Swift + nmcui).
+#### J’utilise un Mac. Quel téléchargement lit la licence ?
 
-#### Est-ce que c'est open source ?
+Celui du 15 octobre, sur <a href="/media-cataloger-2">Media Cataloger 2</a>. Cette page est l’ancien téléchargement gratuit, pour les Mac Intel, limité à un disque.
 
-Certaines parties.
+#### Est-ce open source ?
+
+Certaines parties. Media Cataloger 2 est une application Noematic. Ce téléchargement gratuit est public.
+
+#### Faut-il internet ?
+
+Non pour cataloguer, chercher et voir les doublons. Tout reste sur votre machine.

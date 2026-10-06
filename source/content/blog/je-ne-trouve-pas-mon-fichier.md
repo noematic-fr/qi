@@ -7,34 +7,30 @@ tags:
   - gestion
 ---
 
-1. Pourquoi ne trouves-tu pas tes fichiers ? Parce qu'ils ne sont pas bien organisés.
-1. Pourquoi ne sont-ils pas bien organisés ? Parce que je n'ai pas le temps de les classer correctement.
-1. Pourquoi n'as-tu pas le temps de les classer correctement ? Parce que je ne dispose pas d'un outil qui automatise ou simplifie ce processus.
-1. Pourquoi n'as-tu pas un tel outil ? Parce que je n'étais pas au courant de l'existence de MediaCataloger.
-1. Pourquoi n'étais-tu pas au courant de MediaCataloger ? Parce que je n'ai pas encore exploré des solutions adaptées à mes besoins de gestion de fichiers.
+1. Pourquoi ne trouves-tu pas tes fichiers ? Parce qu'ils sont répartis sur des disques que je ne branche pas tous.
+1. Pourquoi cette répartition pose problème ? Parce que je n'ai pas le catalogue du disque une fois qu'il est débranché.
+1. Pourquoi n'as-tu pas ce catalogue ? Parce que je ne dispose pas d'un outil qui indexe le volume et le garde en local.
+1. Pourquoi n'as-tu pas un tel outil ? Parce que je cherchais un logiciel de médiathèque, de tags ou de sauvegarde.
+1. Pourquoi cette piste ? Parce que je n'avais pas vu qu'un catalogue de disques suffit pour savoir où est le fichier.
 
-## Comment MediaCataloger résout ce problème :
+## Comment Media Cataloger 2 répond
 
-### Organisation Automatisée
+### Catalogue local
 
-MediaCataloger permet de créer des catalogues automatiquement lors de l'importation des fichiers. Il peut reconnaître et extraire les métadonnées des fichiers (date, format, auteur, etc.), ce qui réduit considérablement le temps nécessaire pour organiser les fichiers manuellement.
+Indexer un volume enregistre l'arborescence, les dates de modification et les tailles. Le disque peut ensuite rester au coffre : le catalogue est sur la machine.
 
-### Recherche Avancée
+### Recherche
 
-Grâce à sa fonction de recherche puissante, MediaCataloger permet de retrouver des fichiers en utilisant des critères multiples, comme les tags, les dates, les types de fichiers, ou même des mots-clés trouvés dans le contenu des documents. Cela résout directement le problème de retrouver des fichiers rapidement.
+Par nom ou par extension, sur les disques catalogués, connectés ou non. Pas de recherche dans le texte des documents.
 
-### Tagging et Catégorisation
+### Doublons et fichiers uniques
 
-L'outil offre la possibilité de taguer et de catégoriser les fichiers de manière personnalisée. Cela répond au besoin d'organiser les fichiers de manière logique et accessible, même si le temps manque pour une organisation minutieuse.
+Copies sur un même disque ou entre plusieurs. Listes par sujet, propriétaire, ou un autre critère. Fichiers présents sur un seul disque. Retirer une copie en trop se décide ensuite : ce n'est pas une sauvegarde.
 
-### Interface Intuitive
+### Sans compte en ligne
 
-L'interface de MediaCataloger est conçue pour être utilisable par tous, rendant l'organisation et la recherche des fichiers moins intimidante et plus rapide, même pour ceux qui n'ont pas beaucoup de temps à consacrer à ces tâches.
+Cataloguer, chercher et voir les doublons ne demande pas internet. Le catalogue ne part pas vers un serveur.
 
-### Sauvegarde et Partage Simplifiés
+[Media Cataloger 2](/media-cataloger-2) est la version en cours. Sur macOS : Swift + nmcd et nmcui. Sur Windows et Linux : le build Go. La licence reçue par email se colle dans le téléchargement du 15 octobre. L’application Mac habituelle ne lit pas encore ce fichier. Les zips publics 0.0.1, gratuits et limités à 1 disque, restent sur [Media Cataloger](/media-cataloger).
 
-En permettant de définir des sauvegardes automatiques et de partager des collections de fichiers, MediaCataloger assure que vous ne perdez jamais vos fichiers et que vous pouvez les retrouver ou les partager facilement, répondant ainsi à la question de la disponibilité et de la localisation des fichiers.
-
-Ainsi, [MediaCataloger](/media-cataloger) résout les "5 Pourquoi" en offrant des solutions pour chaque pourquoi identifié, transformant une situation de désorganisation en une gestion efficace des fichiers. Cela permet de gagner du temps, d'améliorer la productivité et de réduire le stress associé à la recherche de documents ou de médias perdus.
-
-<a href="https://app.youform.com/forms/18nyuesk" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Inscrivez-vous dès aujourd'hui afin de recevoir la date de disponibilité de celui-ci !</a>
+<a href="/media-cataloger-2" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Voir Media Cataloger 2</a>

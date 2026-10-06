@@ -20,8 +20,7 @@ export default defineConfig({
 		format: 'file',
 	},
 	redirects: {
-	//	'/thanks': '/supporters',
-	//	'/lock-screen-one': '/any-text',
+		'/diskshelf': '/media-cataloger-2',
 	},
 	integrations: [
 		sitemap({
