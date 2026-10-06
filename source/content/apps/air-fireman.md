@@ -102,3 +102,5 @@ Les premiers builds remaster sont **macOS** et **Windows**. Linux pourra suivre.
 #### Autres jeux ?
 
 [Sheep Dog](/sheep-dog) — mini-jeu de berger cozy (desktop, 1,99 € sur [Payhip](https://payhip.com/b/AI2h7)).
+
+[Cozyplanes](/cozyplanes) — contrôle aérien au doigt, gratuit à télécharger.

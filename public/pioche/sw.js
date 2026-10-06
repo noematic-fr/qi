@@ -1,4 +1,4 @@
-const CACHE = "pioche-v4";
+const CACHE = "pioche-v6";
 const ASSETS = [
   "./",
   "./index.html",
@@ -8,6 +8,7 @@ const ASSETS = [
   "./deck.json",
   "./manifest.webmanifest",
   "./img/sheeps.jpg",
+  "./img/cozyplanes.jpg",
   "./img/air-fireman.jpg",
   "./img/canadair.jpg",
   "./img/fire-command.jpg",
@@ -34,6 +35,21 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
+  const isDeck = new URL(event.request.url).pathname.endsWith("deck.json");
+  if (isDeck) {
+    event.respondWith(
+      fetch(event.request)
+        .then((res) => {
+          if (res.ok) {
+            const copy = res.clone();
+            caches.open(CACHE).then((cache) => cache.put(event.request, copy));
+          }
+          return res;
+        })
+        .catch(() => caches.match(event.request)),
+    );
+    return;
+  }
   event.respondWith(
     caches.match(event.request).then((hit) => hit || fetch(event.request)),
   );

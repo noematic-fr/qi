@@ -93,4 +93,4 @@ Mini-jeu complet à 1,99 € sur [Payhip](https://payhip.com/b/AI2h7). Les retou
 
 #### Jeux liés ?
 
-[Air Fireman](/air-fireman) est notre arcade feux de forêt (classique gratuit dans le navigateur + remaster Godot). Sheep Dog est un titre cozy séparé.
+[Air Fireman](/air-fireman) est notre arcade feux de forêt (classique gratuit dans le navigateur + remaster Godot). [Cozyplanes](/cozyplanes) est le contrôle aérien au doigt, gratuit à télécharger. Sheep Dog est un titre cozy séparé.

@@ -27,6 +27,7 @@ const appsCollection = defineCollection({
 		setappId: z.number().int().positive().safe().optional(),
 		isPaid: z.boolean().default(false),
 		pricing: z.enum(['paid', 'free', 'building']).optional(),
+		badge: z.string().optional(),
 		isMenuBarApp: z.boolean().default(false),
 		mainLinks: z.record(z.string().url()).optional(),
 		links: z.record(z.string().url()).optional(),
