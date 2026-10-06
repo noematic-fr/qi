@@ -6,23 +6,25 @@ isPaid: true
 platforms:
   - macOS
   - Windows
+  - Linux
 mainLinks:
-  "Acheter — 1,99 €": "https://payhip.com/buy?link=AI2h7"
+  "Acheter sur itch — 1,90 $": "https://noematic.itch.io/sheep-dog"
+  "Acheter sur Payhip — 1,90 €": "https://payhip.com/b/AI2h7"
 links:
-  "Page produit Payhip": "https://payhip.com/b/AI2h7"
-  "Boutique Noematic": "https://payhip.com/noematic"
+  "Noematic sur itch": "https://noematic.itch.io"
+  "Payhip — 1,90 €": "https://payhip.com/b/AI2h7"
   "Notes projet": "https://git.noematic.eu/baptiste/sheeps"
 ---
 
 <div class="mb-6 rounded-2xl border border-lime-600/40 bg-lime-50 px-5 py-4 text-lime-950 dark:border-lime-400/30 dark:bg-lime-950/40 dark:text-lime-100">
-  <p class="m-0 font-medium">Mini-jeu de berger cozy — 1,99 €</p>
+  <p class="m-0 font-medium">Mini-jeu de berger cozy — 1,90 $ ou 1,90 €</p>
   <p class="mt-2 mb-0 text-sm opacity-90">
     Un court jeu <strong>Godot</strong> desktop : guidez le chien, rassemblez les moutons, fermez le portail du parc, et battez les temps or / argent / bronze.
     Douze épreuves de campagne (dont tutoriels) plus des cartes aléatoires en mode endless.
   </p>
-  <p class="mt-3 mb-0 flex flex-col sm:flex-row sm:items-center gap-2">
-    <a href="https://payhip.com/buy?link=AI2h7" class="inline-block text-center rounded-xl bg-lime-700 px-4 py-2 text-sm font-medium text-white hover:bg-lime-800">Acheter — 1,99 €</a>
-    <a href="https://payhip.com/b/AI2h7" class="inline-block text-center rounded-xl border border-lime-700/40 px-4 py-2 text-sm font-medium hover:bg-lime-100/50 dark:hover:bg-lime-900/40">Page produit Payhip</a>
+  <p class="mt-3 mb-0 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-2">
+    <a href="https://noematic.itch.io/sheep-dog" class="inline-block text-center rounded-xl bg-lime-700 px-4 py-2 text-sm font-medium text-white hover:bg-lime-800">Acheter sur itch — 1,90 $</a>
+    <a href="https://payhip.com/b/AI2h7" class="inline-block text-center rounded-xl bg-lime-700 px-4 py-2 text-sm font-medium text-white hover:bg-lime-800">Acheter sur Payhip — 1,90 €</a>
   </p>
 </div>
 
@@ -34,11 +36,13 @@ Sheep Dog est un petit score-attack pastoral : pas de simu de ferme, pas de mult
 
 ### Obtenir le jeu
 
-Builds desktop **macOS** et **Windows** (Godot 4). Téléchargement immédiat après achat.
+Builds desktop (Godot 4). **itch.io** est le paiement en dollars, avec **Linux** en plus de macOS et Windows. **Payhip** est le paiement en euros : **macOS** et **Windows**.
 
-<a href="https://payhip.com/buy?link=AI2h7" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Acheter — 1,99 €</a>
+<a href="https://noematic.itch.io/sheep-dog" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Acheter sur itch — 1,90 $</a>
 
-<p class="text-sm opacity-80">Prix « café » en achat unique. Lire la fiche d’abord ? <a href="https://payhip.com/b/AI2h7">Page produit Payhip</a> · <a href="https://payhip.com/noematic">Boutique Noematic</a>.</p>
+<a href="https://payhip.com/b/AI2h7" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 mt-3 sm:mb-0 px-8 py-3 w-full rounded-3xl">Acheter sur Payhip — 1,90 €</a>
+
+<p class="text-sm opacity-80">itch.io : 1,90 $ minimum, en dollars (macOS, Windows, Linux). Payhip : 1,90 € fixe, en euros (macOS et Windows).</p>
 
 ### Fonctionnalités
 
@@ -83,13 +87,13 @@ Pas d’échec chronométré dur — prenez votre temps si besoin. Les runs rapi
 
 Non. C’est un court arcade de berger / cozy score-attack. Pas de cultures, pas de multi.
 
-#### Seulement Mac et Windows ?
+#### Quels ordinateurs ?
 
-Les premiers builds visent **macOS** et **Windows**. Linux pourra suivre.
+Sur itch : **macOS**, **Windows** et **Linux**. Sur Payhip : **macOS** et **Windows**.
 
 #### Y a-t-il une démo gratuite ?
 
-Mini-jeu complet à 1,99 € sur [Payhip](https://payhip.com/b/AI2h7). Les retours sont bienvenus via le lien Support.
+Le mini-jeu complet est à 1,90 $ sur [itch.io](https://noematic.itch.io/sheep-dog) ou à 1,90 € sur [Payhip](https://payhip.com/b/AI2h7). Les retours passent par la page de la boutique choisie.
 
 #### Jeux liés ?
 

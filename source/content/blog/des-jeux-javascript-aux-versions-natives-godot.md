@@ -1,6 +1,6 @@
 ---
 title: Des jeux JavaScript dans le navigateur aux versions natives Godot
-description: Air Fireman, sorti en 2013 avec Impact.js, dispose d’un remaster Godot payant pour macOS et Windows. Sheep Dog le rejoint en mini-jeu cozy natif. Le classique gratuit reste en ligne.
+description: Air Fireman, sorti en 2013 avec Impact.js, a un remaster Godot payant. itch.io ajoute Linux à macOS et Windows. Payhip reste macOS et Windows. Sheep Dog le rejoint en mini-jeu cozy natif. Le classique gratuit reste en ligne.
 pubDate: 2026-08-01
 tags:
   - programming
@@ -9,7 +9,7 @@ tags:
 
 Pendant des années, mes jeux vivaient dans le navigateur. L’idée était simple : ouvrir un onglet, jouer, sans installation. En 2013, j’ai publié **Air Fireman** avec [Impact.js](https://impactjs.com/) — une arcade feux de forêt où vous pilotez un bombardier d’eau, combattez le vent et tentez de sauver la forêt. Il tourne encore aujourd’hui, gratuitement, dans un navigateur moderne.
 
-Aujourd’hui j’annonce autre chose : les **premières versions desktop natives** de cette lignée, reconstruites avec **Godot 4**, vendues comme de vraies applications pour **macOS** et **Windows**.
+Aujourd’hui j’annonce autre chose : les **premières versions desktop natives** de cette lignée, reconstruites avec **Godot 4**. Sur itch.io, le téléchargement est **macOS**, **Windows** et **Linux**. Sur Payhip, il est **macOS** et **Windows**.
 
 ## Pourquoi quitter le pur JavaScript ?
 
@@ -23,7 +23,7 @@ Pour un **remaster**, je voulais :
 
 **Godot** collait : scènes et scripts lisibles, 2D solide, export macOS + Windows de premier plan. Le classique gratuit reste là où il a toujours été. Le remaster est un produit à part.
 
-## Air Fireman — remaster (4,99 €)
+## Air Fireman — remaster (4,90 $ ou 4,90 €)
 
 Même fantasy : un avion, du vent, de l’eau, une forêt en feu. Nouveau moteur, présentation rafraîchie, et du contenu difficile à faire évoluer dans l’ancienne stack :
 
@@ -31,29 +31,34 @@ Même fantasy : un avion, du vent, de l’eau, une forêt en feu. Nouveau moteur
 - cartes procédurales (de Training à Inferno, plus profils personnalisés)  
 - scénarios d’incendies historiques stylisés  
 - interface français et anglais  
-- builds **macOS** (universel) et **Windows** 64 bits  
+- itch.io : **macOS** (universel), **Windows** 64 bits et **Linux**, en dollars  
+- Payhip : **macOS** et **Windows**, en euros  
 
-**Prix :** 4,99 € une fois sur [Payhip](https://payhip.com/buy?link=boOuR).  
+**Prix :** 4,90 $ minimum sur [itch.io](https://noematic.itch.io/airfireman), ou 4,90 € sur [Payhip](https://payhip.com/b/boOuR).  
 **Toujours gratuit :** le classique Impact.js 2013 sur [airfireman.noematic.eu](https://airfireman.noematic.eu) et la [page produit Air Fireman](/air-fireman).
 
 Le jeu dans le navigateur **n’est pas** le remaster. N’achetez que si vous voulez l’édition Godot native.
 
-<a href="https://payhip.com/buy?link=boOuR" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Acheter le remaster Air Fireman — 4,99 €</a>
+<a href="https://noematic.itch.io/airfireman" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Acheter le remaster Air Fireman — 4,90 $</a>
 
-## Sheep Dog — mini cozy natif (1,99 €)
+<a href="https://payhip.com/b/boOuR" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 mt-3 sm:mb-0 px-8 py-3 w-full rounded-3xl">Acheter le remaster Air Fireman — 4,90 €</a>
+
+## Sheep Dog — mini cozy natif (1,90 $ ou 1,90 €)
 
 En parallèle du remaster, je publie **[Sheep Dog](/sheep-dog)** : un court jeu de berger conçu nativement en Godot dès le départ. Guidez le chien, rassemblez le troupeau, fermez le portail, visez les temps or / argent / bronze — douze essais de campagne plus des cartes endless. Pas de méta farming, pas de multijoueur : une session au prix d’un café.
 
-**Prix :** 1,99 € sur [Payhip](https://payhip.com/buy?link=AI2h7). Mêmes plateformes : **macOS** et **Windows**.
+**Prix :** 1,90 $ minimum sur [itch.io](https://noematic.itch.io/sheep-dog) (macOS, Windows et Linux), ou 1,90 € sur [Payhip](https://payhip.com/b/AI2h7) (macOS et Windows).
 
-<a href="https://payhip.com/buy?link=AI2h7" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Acheter Sheep Dog — 1,99 €</a>
+<a href="https://noematic.itch.io/sheep-dog" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Acheter Sheep Dog — 1,90 $</a>
+
+<a href="https://payhip.com/b/AI2h7" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 mt-3 sm:mb-0 px-8 py-3 w-full rounded-3xl">Acheter Sheep Dog — 1,90 €</a>
 
 ## La suite
 
-- des builds **Linux** pourront suivre si la demande est là ;  
+- **Linux** est sur le téléchargement itch, avec macOS et Windows. Payhip reste macOS et Windows, en euros ;  
 - un **export web du remaster Godot** est possible plus tard ; un remplacement complet du classique gratuit sur le site attend le retour après ce lancement desktop ;  
 - dans le même univers, **Fire Command** est un jeu séparé (couche commandement) — non inclus avec Air Fireman.
 
 Si vous avez joué à l’original navigateur 2013, merci. Si vous découvrez ces titres maintenant : le classique gratuit reste le moyen le plus rapide d’essayer Air Fireman ; les versions payantes natives sont pour celles et ceux qui veulent une vraie app sur le bureau.
 
-**Boutique :** [payhip.com/noematic](https://payhip.com/noematic) · **Pages :** [Air Fireman](/air-fireman) · [Sheep Dog](/sheep-dog)
+**Jeux :** [noematic.itch.io](https://noematic.itch.io) · [Payhip](https://payhip.com/noematic) · **Pages :** [Air Fireman](/air-fireman) · [Sheep Dog](/sheep-dog)

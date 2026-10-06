@@ -51,6 +51,6 @@ Si un de ces outils vous sert, le moyen le plus simple de contribuer n’est pas
 
 <a href="https://payhip.com/b/pVwaY" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Contribuer via Payhip</a>
 
-Le classique gratuit d’Air Fireman reste en ligne ; les remasters Godot sont sur la [même boutique](https://payhip.com/noematic). Ce tour-ci, c’est le catalogue open source qui avance.
+Le classique gratuit d’Air Fireman reste en ligne. Les jeux Godot sont sur [itch.io](https://noematic.itch.io) en dollars et sur [Payhip](https://payhip.com/noematic) en euros. Ce tour-ci, c’est le catalogue open source qui avance.
 
 **Catalogue :** [qi.noematic.fr](/) · **Contribution :** [Payhip](https://payhip.com/b/pVwaY) · **Code :** [github.com/noematic-eu](https://github.com/noematic-eu)
