@@ -2,6 +2,7 @@
 title: Media Cataloger et les autres catalogues de disques
 description: Retrouver un fichier sur un disque débranché. Ce que fait Media Cataloger, et comment il se place face à WinCatalog, NeoFinder, DiskCatalogMaker et VVV. Relecture du 29 septembre 2026.
 pubDate: 2026-09-29
+alternateSlug: compare-disk-catalogs
 tags:
   - fichiers
   - gestion

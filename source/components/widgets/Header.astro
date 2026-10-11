@@ -1,8 +1,14 @@
 ---
+import {getCollection} from 'astro:content';
 import HeaderLink from './HeaderLink.astro';
 import ToggleMenu from '~/components/core/ToggleMenu.astro';
+import {SITE} from '~/config.mjs';
+import {alternatePath, languageSwitchHref, pairsFromPosts} from '~/i18n/alternates.js';
 
 const {pathname} = Astro.url;
+const pairs = pairsFromPosts(await getCollection('blog'));
+const pairedPath = alternatePath(pathname, pairs);
+const langHref = languageSwitchHref(pathname, SITE.alternateOrigin, pairs);
 const currentPath = pathname.slice(1).replace(/\.\w+$/, ''); // Remove the first `/` and file extension.
 ---
 
@@ -37,7 +43,11 @@ html {
 				<HeaderLink href="/blog">Blog</HeaderLink>
 				<HeaderLink href="/contact">Contact</HeaderLink>
 				<HeaderLink href="https://noematic.fr">Missions</HeaderLink>
-				<HeaderLink href="https://qi.noematic.eu">English version</HeaderLink>
+				<HeaderLink
+					href={langHref}
+					hreflang={pairedPath ? SITE.alternateLocale : undefined}
+					lang={pairedPath ? SITE.alternateLocale : undefined}
+				>English version</HeaderLink>
 			</ul>
 		</nav>
 	</div>

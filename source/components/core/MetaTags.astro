@@ -1,5 +1,7 @@
 ---
+import {getCollection} from 'astro:content';
 import {SITE} from '~/config.mjs';
+import {hreflangLinks, normalizePath, pairsFromPosts} from '~/i18n/alternates.js';
 
 const {
 	title = SITE.name,
@@ -9,9 +11,9 @@ const {
 	lcpImage,
 } = Astro.props;
 
-const path = Astro.url.pathname.replace(/\.html$/, '') || '/';
+const path = normalizePath(Astro.url.pathname);
 const canonicalURL = new URL(path, SITE.origin);
-const alternateURL = new URL(path, SITE.alternateOrigin);
+const alternates = hreflangLinks(path, SITE, pairsFromPosts(await getCollection('blog')));
 const ogPath = _image || SITE.defaultOgImage;
 const ogImage = ogPath ? new URL(ogPath, SITE.origin).href : undefined;
 ---
@@ -22,9 +24,7 @@ const ogImage = ogPath ? new URL(ogPath, SITE.origin).href : undefined;
 <meta name="description" content={description}>
 <meta name="author" content="Noematic">
 <link rel="canonical" href={canonicalURL.href}>
-<link rel="alternate" hreflang={SITE.locale} href={canonicalURL.href}>
-<link rel="alternate" hreflang={SITE.alternateLocale} href={alternateURL.href}>
-<link rel="alternate" hreflang="x-default" href={new URL(path, 'https://qi.noematic.eu').href}>
+{alternates.map(link => <link rel="alternate" hreflang={link.lang} href={link.url}>)}
 <meta property="og:title" content={title}>
 <meta property="og:type" content="website">
 <meta property="og:url" content={canonicalURL.href}>

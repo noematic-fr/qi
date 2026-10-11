@@ -2,6 +2,7 @@
 title: Comment retrouver un fichier quand les disques s'accumulent
 description: Photos, vidéos, musique et documents finissent sur plusieurs disques. Un catalogue local permet de revoir l'arborescence, de chercher par nom ou extension, et de voir les doublons — même quand le disque n'est plus branché.
 pubDate: 2024-12-30
+alternateSlug: organise-your-drives
 tags:
   - fichiers
   - gestion

@@ -2,6 +2,7 @@
 title: Je ne trouve pas mes fichiers quand j'en ai besoin.
 description: Application de la méthode des 5 Pourquoi
 pubDate: 2024-12-31
+alternateSlug: i-cant-find-my-file
 tags:
   - fichiers
   - gestion

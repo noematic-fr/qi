@@ -22,6 +22,10 @@
       "type": "string",
       "format": "date-time"
     },
+    "alternateSlug": {
+      "type": "string",
+      "pattern": "^[a-z\\d]+(?:-[a-z\\d]+)*$"
+    },
     "tags": {
       "type": "array",
       "items": {

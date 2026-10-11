@@ -5,8 +5,10 @@ import sitemap from '@astrojs/sitemap';
 import {unified} from '@astrojs/markdown-remark';
 import remarkCustomHeaderId from 'remark-custom-header-id';
 import {SITE} from './source/config.mjs';
+import {hreflangLinks, loadBlogPairs} from './source/i18n/alternates.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const blogPairs = loadBlogPairs(path.resolve(__dirname, 'source/content/blog'));
 
 // https://astro.build/config
 export default defineConfig({
@@ -24,17 +26,13 @@ export default defineConfig({
 	},
 	integrations: [
 		sitemap({
+			filter(page) {
+				return !page.includes('/404');
+			},
 			serialize(item) {
-				const path = new URL(item.url).pathname;
-				return {
-					url: item.url,
-					lastmod: new Date().toISOString(),
-					links: [
-						{lang: 'fr', url: `https://qi.noematic.fr${path}`},
-						{lang: 'en', url: `https://qi.noematic.eu${path}`},
-						{lang: 'x-default', url: `https://qi.noematic.eu${path}`},
-					],
-				};
+				// No lastmod: a build timestamp would mark every URL as changed on each deploy.
+				const links = hreflangLinks(new URL(item.url).pathname, SITE, blogPairs);
+				return links.length > 0 ? {url: item.url, links} : {url: item.url};
 			},
 		}),
 	],

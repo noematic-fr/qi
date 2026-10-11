@@ -62,6 +62,7 @@ const blogCollection = defineCollection({
 		title: z.string().nonempty(),
 		description: z.string().nonempty().optional(),
 		pubDate: z.date(),
+		alternateSlug: z.string().regex(/^[a-z\d]+(?:-[a-z\d]+)*$/).optional(),
 		tags: z.array(z.enum([
 			'fichiers',
 			'gestion',
