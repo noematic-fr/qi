@@ -26,9 +26,9 @@ mainLinks:
 
 <a href="/apps/pdp11/play/index.html" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Plein écran</a>
 
-PDP-11 est un jeu pour apprendre le geste du pupitre, pas pour démarrer Unix. Les leçons suivent l’ordre d’un opérateur : interrupteurs, LOAD ADRS, EXAM, DEP, ENABLE, START, CONT. Les étiquettes du pupitre restent celles de DEC. La fiche, à côté, est en français.
+PDP-11 est un jeu pour apprendre le geste du pupitre. Les leçons suivent l’ordre d’un opérateur : interrupteurs, LOAD ADRS, EXAM, DEP, ENABLE, START, CONT. Les étiquettes du pupitre restent celles de DEC. La fiche, à côté, est en français.
 
-Le cours tient en neuf chapitres, du premier bit jusqu’à une boucle. Ensuite le pupitre est libre, avec trois défis. La progression reste dans ce navigateur.
+On peut ouvrir n’importe quel chapitre, puis n’importe quelle étape, sans rejouer le début. Après la boucle, l’amorce RK05 de la page de Paul Nankervis est à déposer. La session Unix V5 (cat, who, ls, cal, bas, cc, fc) se rejoue au télétype : cette école n’a pas le disque. Ensuite le pupitre est libre, avec trois défis. La progression reste dans ce navigateur.
 
 Ce n’est pas l’émulateur complet. Pas d’octets, pas de périphériques, pas de système. Le PDP-11/70 de Paul Nankervis, celui qui lance Unix, RT-11 et RSTS, est lié dans le jeu.
 

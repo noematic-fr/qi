@@ -43,6 +43,21 @@ var Ecole = (function (PDP11) {
     { addr: 0o1012, word: 0o000000, asm: "halt" },
   ];
 
+  var BOOT = [
+    { addr: 0o1000, word: 0o012737, asm: "mov #0,@#177412" },
+    { addr: 0o1002, word: 0o000000, asm: "(rk0)" },
+    { addr: 0o1004, word: 0o177412, asm: "(rkda)" },
+    { addr: 0o1006, word: 0o012700, asm: "mov #177406,r0" },
+    { addr: 0o1010, word: 0o177406, asm: "(rkwc)" },
+    { addr: 0o1012, word: 0o012710, asm: "mov #177400,(r0)" },
+    { addr: 0o1014, word: 0o177400, asm: "(buf)" },
+    { addr: 0o1016, word: 0o012740, asm: "mov #5,-(r0)" },
+    { addr: 0o1020, word: 0o000005, asm: "(read)" },
+    { addr: 0o1022, word: 0o105710, asm: "tstb (r0)" },
+    { addr: 0o1024, word: 0o100376, asm: "bpl .-2" },
+    { addr: 0o1026, word: 0o005007, asm: "clr pc" },
+  ];
+
   var CHAPTERS = [
     { id: "switches", title: L("Interrupteurs", "Switches") },
     { id: "address", title: L("Adresse", "Address") },
@@ -52,6 +67,8 @@ var Ecole = (function (PDP11) {
     { id: "calc", title: L("Calcul", "Arithmetic") },
     { id: "step", title: L("Pas à pas", "Single step") },
     { id: "loop", title: L("Boucle", "Loop") },
+    { id: "boot", title: L("Amorce", "Bootstrap") },
+    { id: "unix", title: L("Unix", "Unix") },
     { id: "free", title: L("Libre", "Free") },
   ];
 
@@ -121,6 +138,112 @@ var Ecole = (function (PDP11) {
       focus: "dep",
       ghost: null,
       text: L("DEP écrit ", "DEP writes ") + oct(hole.word) + L(" en ", " at ") + oct(hole.addr) + L(" et avance de 2.", " and advances by 2."),
+    };
+  }
+
+  function plant(m, program) {
+    prepare(m);
+    PDP11.wipe(m, 0o1000, 0o1100);
+    PDP11.writeProgram(m, program);
+  }
+
+  function stage(m, program, pc, r0) {
+    plant(m, program);
+    m.r[0] = r0 & 0xffff;
+    m.r[7] = pc & 0xffff;
+    m.enable = false;
+    m.running = false;
+  }
+
+  function normCmd(text) {
+    return String(text || "").replace(/\s+/g, " ").trim().toLowerCase();
+  }
+
+  var UNIX = [
+    { expect: "boot rk0", reply: ["@"], about: L("Charge le bloc d'amorce de rk0. Répond @.", "Loads the rk0 boot block. Answers @.") },
+    { expect: "unix", reply: ["login:"], about: L("Nom du noyau Unix V5. Répond login:.", "Unix V5 kernel name. Answers login:.") },
+    { expect: "root", reply: ["#"], about: L("Compte sans mot de passe. Le # est l'invite du shell.", "Account with no password. # is the shell prompt.") },
+    { expect: "cat /etc/passwd", reply: ["root::0:1::/:", "daemon::1:1::/bin:", "bin::3:1::/bin:"], about: L("Affiche les comptes : nom, mot de passe vide, utilisateur, groupe, répertoire.", "Prints the accounts: name, empty password, user, group, directory.") },
+    { expect: "who", reply: ["root    tty8"], about: L("Affiche la session ouverte : root sur tty8.", "Prints the open session: root on tty8.") },
+    { expect: "chdir /usr/sys/ken", reply: [], about: L("Entre dans les sources du noyau de Ken Thompson.", "Enters Ken Thompson's kernel sources.") },
+    { expect: "pwd", reply: ["../usr/sys/ken"], about: L("Rappelle le répertoire courant.", "Repeats the current directory.") },
+    { expect: "ls -al", reply: ["alloc.c", "clock.c", "fio.c", "iget.c", "main.c"], about: L("Liste le répertoire courant. Dans /usr/sys/ken : les fichiers C du noyau.", "Lists the current directory. In /usr/sys/ken: the kernel's C files.") },
+    { expect: "chdir /", reply: [], about: L("Revient à la racine.", "Returns to the root.") },
+    { expect: "ls -al /usr/games", reply: ["bj", "chess", "cubic", "moo", "ttt", "wump"], about: L("Jeux du disque : blackjack, échecs, wumpus.", "Disk games: blackjack, chess, wumpus.") },
+    { expect: "ls -al /bin", reply: ["ar", "as", "bas", "cat", "cc"], about: L("Commandes du système.", "System commands.") },
+    { expect: "cal 10 1981", reply: ["   Oct 1981", "S  M Tu  W Th  F  S", "             1  2  3", " 4  5  6  7  8  9 10", "11 12 13 14 15 16 17", "18 19 20 21 22 23 24", "25 26 27 28 29 30 31"], about: L("Octobre 1981. Le 1er est un jeudi.", "October 1981. The 1st is a Thursday.") },
+    { expect: "bas", reply: [">"], about: L("Ouvre le BASIC. La ligne suivante est une expression.", "Opens BASIC. The next line is an expression.") },
+    { expect: "print sqr(2)", reply: ["1.414213562"], about: L("Racine de 2, en BASIC.", "Square root of 2, in BASIC.") },
+    { expect: "cc hello.c", reply: [], about: L("Compile le main qui appelle printf(\"Hello world\"). a.out le lance.", "Compiles the main that calls printf(\"Hello world\"). a.out runs it.") },
+    { expect: "fc pi.f", reply: [], about: L("Compile la série de Nilakantha en Fortran. a.out écrit π en format D.", "Compiles the Nilakantha series in Fortran. a.out writes π in D format.") },
+  ];
+
+  function unixAnswer(text, session) {
+    var cmd = normCmd(text);
+    if (cmd === "help") {
+      return [L("Commandes de la session publiée, dans n'importe quel ordre :", "Commands from the published session, in any order:")].concat(UNIX.map(function (row) { return row.expect; })).concat(["a.out"]);
+    }
+    if (cmd === "a.out") {
+      if (session.lastUnix === "fc") return ["PI is approximately 0.3141592653580503d+01"];
+      if (session.lastUnix === "cc") return ["Hello world"];
+      return [L("Rien n'a été compilé. cc hello.c ou fc pi.f d'abord.", "Nothing has been compiled. cc hello.c or fc pi.f first.")];
+    }
+    for (var i = 0; i < UNIX.length; i++) {
+      if (normCmd(UNIX[i].expect) !== cmd) continue;
+      if (cmd === "cc hello.c") session.lastUnix = "cc";
+      if (cmd === "fc pi.f") session.lastUnix = "fc";
+      return UNIX[i].reply.slice();
+    }
+    return [L("Inconnue ici. help liste la session Unix V5. Ce télétype ne lance pas le disque.", "Unknown here. help lists the Unix V5 session. This teletype does not start the disk.")];
+  }
+
+  function consoleStep(spec) {
+    return {
+      id: spec.id,
+      chapter: "unix",
+      title: spec.title,
+      console: true,
+      teach: spec.teach,
+      enter: function (ctx) {
+        ctx.m.running = false;
+        ctx.m.enable = false;
+        ctx.session.lines = [];
+        ctx.session.cursor = 0;
+        ctx.session.bad = "";
+      },
+      guide: function (ctx) {
+        var i = ctx.session.cursor || 0;
+        if (i >= spec.lines.length) {
+          return { done: true, focus: null, ghost: null, text: "", success: spec.success };
+        }
+        var row = spec.lines[i];
+        var ask = row.prompt + " " + row.expect;
+        if (ctx.session.bad) {
+          return {
+            done: false,
+            focus: "console",
+            ghost: null,
+            text: L("Pas cette commande. ", "Not that command. ") + ask,
+          };
+        }
+        return { done: false, focus: "console", ghost: null, text: ask };
+      },
+      onEvent: function (ctx, e) {
+        if (e.type !== "line") return;
+        var i = ctx.session.cursor || 0;
+        if (i >= spec.lines.length) return;
+        var row = spec.lines[i];
+        if (normCmd(e.text) !== normCmd(row.expect)) {
+          ctx.session.bad = e.text;
+          return;
+        }
+        ctx.session.bad = "";
+        ctx.session.lines.push({ kind: "in", text: row.prompt + row.expect });
+        (row.reply || []).forEach(function (line) {
+          ctx.session.lines.push({ kind: "out", text: line });
+        });
+        ctx.session.cursor = i + 1;
+      },
     };
   }
 
@@ -288,11 +411,7 @@ var Ecole = (function (PDP11) {
         L("Ensuite il avance l'adresse de 2. Un mot PDP-11 fait 16 bits, donc deux octets. On ne relit pas le même mot en appuyant deux fois.", "Then it advances the address by 2. A PDP-11 word is 16 bits, so two bytes. Pressing twice does not reread the same word."),
       ],
       enter: function (ctx) {
-        prepare(ctx.m);
-        PDP11.wipe(ctx.m, 0o1000, 0o1100);
-        ctx.m.mem[0o1000 >> 1] = 0o012700;
-        ctx.m.mem[0o1002 >> 1] = 0o000001;
-        ctx.m.mem[0o1004 >> 1] = 0o000000;
+        plant(ctx.m, EXAM_DEMO);
       },
       guide: function (ctx) {
         if ((ctx.m.mem[0o1000 >> 1] & 0xffff) !== 0o012700) {
@@ -333,6 +452,10 @@ var Ecole = (function (PDP11) {
       id: "exam-next",
       chapter: "exam",
       title: L("Le mot suivant est la donnée", "The next word is the data"),
+      enter: function (ctx) {
+        plant(ctx.m, EXAM_DEMO);
+        ctx.m.addr = 0o1002;
+      },
       pace: "normal",
       teach: [
         L("012700 se lit mov #n, r0. Le n n'est pas dans le mot de l'instruction. Il occupe le mot d'après. Ici, ce mot est 000001.", "012700 reads as mov #n, r0. The n is not inside the instruction word. It occupies the next word. Here that word is 000001."),
@@ -370,6 +493,10 @@ var Ecole = (function (PDP11) {
       id: "exam-halt",
       chapter: "exam",
       title: L("Le mot nul", "The zero word"),
+      enter: function (ctx) {
+        plant(ctx.m, EXAM_DEMO);
+        ctx.m.addr = 0o1004;
+      },
       pace: "normal",
       teach: [
         L("000000 est l'instruction HALT. Ce n'est pas « vide ». C'est un ordre : arrête-toi.", "000000 is the HALT instruction. It is not “empty”. It is an order: stop."),
@@ -465,6 +592,9 @@ var Ecole = (function (PDP11) {
       id: "verify-chaser",
       chapter: "deposit",
       title: L("Relire avant de lancer", "Read back before you run"),
+      enter: function (ctx) {
+        plant(ctx.m, CHASER);
+      },
       pace: "normal",
       program: CHASER,
       teach: [
@@ -552,6 +682,10 @@ var Ecole = (function (PDP11) {
       id: "start-chaser",
       chapter: "run",
       title: L("ENABLE, puis START", "ENABLE, then START"),
+      enter: function (ctx) {
+        plant(ctx.m, CHASER);
+        ctx.m.display = "r0";
+      },
       pace: "slow",
       program: CHASER,
       teach: [
@@ -611,6 +745,13 @@ var Ecole = (function (PDP11) {
       id: "watch-chaser",
       chapter: "run",
       title: L("Le bit qui traverse la retenue", "The bit that crosses the carry"),
+      enter: function (ctx) {
+        plant(ctx.m, CHASER);
+        ctx.m.display = "r0";
+        ctx.m.addr = 0o1000;
+        ctx.m.enable = true;
+        PDP11.start(ctx.m);
+      },
       pace: "slow",
       teach: [
         L("R0 commence à 1. rol le décale vers la gauche. Le bit qui sort du poids fort entre dans C, la retenue. Au tour suivant, C entre dans le bit 0.", "R0 starts at 1. rol shifts it left. The bit that leaves the high end enters C, the carry. On the next turn, C enters bit 0."),
@@ -656,6 +797,13 @@ var Ecole = (function (PDP11) {
       id: "halt-chaser",
       chapter: "run",
       title: L("L'opérateur arrête", "The operator stops it"),
+      enter: function (ctx) {
+        plant(ctx.m, CHASER);
+        ctx.m.display = "r0";
+        ctx.m.addr = 0o1000;
+        ctx.m.enable = true;
+        PDP11.start(ctx.m);
+      },
       pace: "slow",
       teach: [
         L("Baisser ENABLE/HALT demande l'arrêt entre deux instructions. Le programme, lui, ne contient pas de HALT : il tournerait indéfiniment.", "Lowering ENABLE/HALT asks for a stop between two instructions. The program itself contains no HALT: it would run forever."),
@@ -683,6 +831,10 @@ var Ecole = (function (PDP11) {
       id: "read-r0",
       chapter: "run",
       title: L("Les registres ont une adresse de pupitre", "The registers have a panel address"),
+      enter: function (ctx) {
+        prepare(ctx.m);
+        ctx.m.r[0] = 1;
+      },
       pace: "normal",
       teach: [
         L("Un programme désigne R0 dans l'instruction, pas par une adresse. Depuis le pupitre, DEC a quand même donné une adresse à chaque registre : 177700 est R0, 177701 est R1, jusqu'à 177707 qui est le PC.", "A program names R0 inside the instruction, not by an address. From the panel, DEC still gave each register an address: 177700 is R0, 177701 is R1, up to 177707 which is the PC."),
@@ -758,13 +910,7 @@ var Ecole = (function (PDP11) {
         L("Même geste qu'avec le chenillard : adresse 001000, ENABLE, START. Cette fois le programme s'arrête tout seul. Quand RUN s'éteint, le résultat n'est pas sur les lampes DATA. Il est dans R0, donc en 177700.", "Same gesture as the chaser: address 001000, ENABLE, START. This time the program stops by itself. When RUN goes off, the result is not on the DATA lamps. It is in R0, so at 177700."),
       ],
       enter: function (ctx) {
-        ctx.m.running = false;
-        ctx.m.enable = false;
-        ctx.m.stall = 0;
-        ctx.m.haltReason = null;
-        ctx.m.addr = 0;
-        ctx.m.switches = 0;
-        PDP11.clearRegs(ctx.m);
+        plant(ctx.m, ADD);
       },
       guide: function (ctx) {
         var bad = lostProgram(ctx.m, ADD);
@@ -920,6 +1066,9 @@ var Ecole = (function (PDP11) {
       id: "step-see",
       chapter: "step",
       title: L("Confirmer sur les lampes", "Confirm it on the lamps"),
+      enter: function (ctx) {
+        stage(ctx.m, ADD, 0o1004, 0o14);
+      },
       pace: "normal",
       revealRegs: true,
       teach: [
@@ -962,6 +1111,9 @@ var Ecole = (function (PDP11) {
       id: "step-add",
       chapter: "step",
       title: L("Le pas du ADD", "The ADD step"),
+      enter: function (ctx) {
+        stage(ctx.m, ADD, 0o1004, 0o14);
+      },
       pace: "normal",
       revealRegs: true,
       teach: [
@@ -991,6 +1143,9 @@ var Ecole = (function (PDP11) {
       id: "step-halt",
       chapter: "step",
       title: L("Le pas qui s'arrête", "The step that stops"),
+      enter: function (ctx) {
+        stage(ctx.m, ADD, 0o1010, 0o17);
+      },
       pace: "normal",
       revealRegs: true,
       teach: [
@@ -1040,13 +1195,7 @@ var Ecole = (function (PDP11) {
         L("Lance en 001000. La boucle est trop rapide pour les lampes : le résultat se lit après l'arrêt, dans R0. Tu dois y trouver 000005.", "Start at 001000. The loop is too fast for the lamps: the result is read after the stop, in R0. You should find 000005 there."),
       ],
       enter: function (ctx) {
-        ctx.m.running = false;
-        ctx.m.enable = false;
-        ctx.m.stall = 0;
-        ctx.m.haltReason = null;
-        PDP11.clearRegs(ctx.m);
-        ctx.m.addr = 0;
-        ctx.m.switches = 0;
+        plant(ctx.m, LOOP);
       },
       guide: function (ctx) {
         var bad = lostProgram(ctx.m, LOOP);
@@ -1099,26 +1248,227 @@ var Ecole = (function (PDP11) {
       },
     },
     {
+      id: "dep-boot",
+      chapter: "boot",
+      title: L("L'amorce du disque RK05", "The RK05 disk bootstrap"),
+      pace: "normal",
+      program: BOOT,
+      teach: [
+        L("Sans BIOS, l'opérateur dépose lui-même le chargeur. Celui-ci, publié pour le RK05, demande au contrôleur de lire 256 mots à l'adresse 0, puis met le PC à 0.", "With no BIOS, the operator deposits the loader himself. This one, published for the RK05, asks the controller to read 256 words at address 0, then sets the PC to 0."),
+        L("001002 choisit l'unité : 000000 est rk0, le disque d'Unix V5. 177412 est le registre d'adresse du RK11, 177406 son compteur de mots, 177400 son tampon. 000005 est la commande de lecture.", "001002 selects the unit: 000000 is rk0, the Unix V5 disk. 177412 is the RK11 disk address, 177406 its word count, 177400 its buffer. 000005 is the read command."),
+      ],
+      enter: function (ctx) {
+        prepare(ctx.m);
+        blankUnknown(ctx.m);
+      },
+      guide: function (ctx) {
+        return depositGuide(ctx.m, BOOT);
+      },
+    },
+    {
+      id: "see-boot",
+      chapter: "boot",
+      title: L("Le mot que cette école ne sait pas exécuter", "The word this school cannot execute"),
+      pace: "normal",
+      program: BOOT,
+      teach: [
+        L("105710 est tstb (r0) : un test d'octet sur le registre du contrôleur. Cette école n'a pas d'octets, ni de RK11. Sur le pupitre complet, ENABLE et START lancent la lecture, et le bloc chargé à 0 demande le nom du système.", "105710 is tstb (r0): a byte test of the controller register. This school has no bytes, and no RK11. On the full panel, ENABLE and START begin the read, and the block loaded at 0 asks for the system name."),
+        L("La suite n'exécute donc pas Unix. Elle reprend la session publiée pour RK0 : boot rk0, puis unix, puis les programmes du disque.", "What follows does not execute Unix. It replays the session published for RK0: boot rk0, then unix, then the programs on the disk."),
+      ],
+      enter: function (ctx) {
+        plant(ctx.m, BOOT);
+      },
+      guide: function (ctx) {
+        var bad = lostProgram(ctx.m, BOOT);
+        if (bad) return bad;
+        if (ctx.session.seen) {
+          return {
+            done: true,
+            focus: null,
+            ghost: null,
+            text: "",
+            success: L("001022 contient 105710. C'est ici que le chargeur attend le disque. Le télétype d'Unix V5 est l'étape suivante.", "001022 holds 105710. This is where the loader waits for the disk. The Unix V5 teletype is the next step."),
+          };
+        }
+        var arm = focusSwitchOr(ctx.m, 0o1022, "load");
+        if (ctx.m.addr !== 0o1022) {
+          return {
+            done: false,
+            focus: arm.focus,
+            ghost: arm.ghost,
+            text: L("LOAD ADRS en 001022, puis EXAM. Tu dois lire 105710.", "LOAD ADRS at 001022, then EXAM. You should read 105710."),
+          };
+        }
+        return {
+          done: false,
+          focus: "exam",
+          ghost: null,
+          text: L("EXAM. 105710, tstb (r0).", "EXAM. 105710, tstb (r0)."),
+        };
+      },
+      onEvent: function (ctx, e) {
+        if (e.type === "exam" && e.at === 0o1022 && e.data === 0o105710) ctx.session.seen = true;
+      },
+    },
+    consoleStep({
+      id: "unix-boot",
+      title: L("Démarrer Unix V5", "Start Unix V5"),
+      teach: [
+        L("Sur RK0, le chargeur affiche Boot>. boot rk0 charge le bloc. Le système demande @, et unix est le nom du noyau. Le login de la session publiée est root, sans mot de passe.", "On RK0 the loader prints Boot>. boot rk0 loads the block. The system asks @, and unix is the kernel name. The published session logs in as root, with no password."),
+      ],
+      success: L("Le # est l'invite du shell. Les programmes qui suivent sont ceux du disque, pas des mots à déposer.", "The # is the shell prompt. The programs that follow live on the disk, not as words to deposit."),
+      lines: [
+        { prompt: "Boot> ", expect: "boot rk0", reply: ["@"] },
+        { prompt: "@ ", expect: "unix", reply: ["login:"] },
+        { prompt: "login: ", expect: "root", reply: ["#"] },
+      ],
+    }),
+    consoleStep({
+      id: "unix-cat",
+      title: L("cat lit un fichier", "cat reads a file"),
+      teach: [
+        L("cat copie un fichier sur le terminal. /etc/passwd liste les comptes : nom, mot de passe vide, numéro d'utilisateur, groupe, et répertoire.", "cat copies a file to the terminal. /etc/passwd lists the accounts: name, empty password, user number, group, and directory."),
+      ],
+      success: L("root, daemon et bin sont les trois premiers comptes. :: veut dire : pas de mot de passe.", "root, daemon, and bin are the first three accounts. :: means: no password."),
+      lines: [
+        {
+          prompt: "# ",
+          expect: "cat /etc/passwd",
+          reply: ["root::0:1::/:", "daemon::1:1::/bin:", "bin::3:1::/bin:", "#"],
+        },
+      ],
+    }),
+    consoleStep({
+      id: "unix-who",
+      title: L("who est connecté", "who is logged in"),
+      teach: [
+        L("who lit la table des sessions. Ici un seul utilisateur : root, sur le télétype tty8.", "who reads the session table. Here there is one user: root, on teletype tty8."),
+      ],
+      success: L("Le programme ne calcule rien : il affiche une table tenue par le système.", "The program computes nothing: it prints a table kept by the system."),
+      lines: [
+        { prompt: "# ", expect: "who", reply: ["root    tty8", "#"] },
+      ],
+    }),
+    consoleStep({
+      id: "unix-ls",
+      title: L("Les sources du noyau", "The kernel sources"),
+      teach: [
+        L("chdir change de répertoire. pwd rappelle où l'on est. ls -al liste tout, y compris les noms qui commencent par un point. /usr/sys/ken est le noyau de Ken Thompson : alloc.c, clock.c, fio.c, iget.c, main.c.", "chdir changes directory. pwd repeats where you are. ls -al lists everything, including names that start with a dot. /usr/sys/ken is Ken Thompson's kernel: alloc.c, clock.c, fio.c, iget.c, main.c."),
+      ],
+      success: L("Le noyau de cette édition est un répertoire de fichiers C, pas une boîte noire.", "The kernel of this edition is a directory of C files, not a black box."),
+      lines: [
+        { prompt: "# ", expect: "chdir /usr/sys/ken", reply: ["#"] },
+        { prompt: "# ", expect: "pwd", reply: ["../usr/sys/ken", "#"] },
+        { prompt: "# ", expect: "ls -al", reply: ["alloc.c", "clock.c", "fio.c", "iget.c", "main.c", "#"] },
+      ],
+    }),
+    consoleStep({
+      id: "unix-games",
+      title: L("Jeux et /bin", "Games and /bin"),
+      teach: [
+        L("/usr/games contient bj, chess, cubic, moo, ttt et wump. /bin contient les commandes : cat, cc, as, bas, et les autres outils du système.", "/usr/games holds bj, chess, cubic, moo, ttt, and wump. /bin holds the commands: cat, cc, as, bas, and the other system tools."),
+      ],
+      success: L("Deux répertoires, deux rôles : les jeux d'un côté, les commandes de l'autre.", "Two directories, two roles: games on one side, commands on the other."),
+      lines: [
+        { prompt: "# ", expect: "chdir /", reply: ["#"] },
+        { prompt: "# ", expect: "ls -al /usr/games", reply: ["bj", "chess", "cubic", "moo", "ttt", "wump", "#"] },
+        { prompt: "# ", expect: "ls -al /bin", reply: ["ar", "as", "bas", "cat", "cc", "#"] },
+      ],
+    }),
+    consoleStep({
+      id: "unix-cal",
+      title: L("cal affiche un mois", "cal prints a month"),
+      teach: [
+        L("cal 10 1981 demande octobre 1981. Le 1er tombe un jeudi. Le programme ne fait que disposer les jours.", "cal 10 1981 asks for October 1981. The 1st is a Thursday. The program only lays out the days."),
+      ],
+      success: L("Octobre 1981 tient sur le terminal. Rien n'a été déposé en mémoire.", "October 1981 fits on the terminal. Nothing was deposited in memory."),
+      lines: [
+        {
+          prompt: "# ",
+          expect: "cal 10 1981",
+          reply: [
+            "   Oct 1981",
+            "S  M Tu  W Th  F  S",
+            "             1  2  3",
+            " 4  5  6  7  8  9 10",
+            "11 12 13 14 15 16 17",
+            "18 19 20 21 22 23 24",
+            "25 26 27 28 29 30 31",
+            "#",
+          ],
+        },
+      ],
+    }),
+    consoleStep({
+      id: "unix-bas",
+      title: L("bas calcule", "bas calculates"),
+      teach: [
+        L("bas est l'interpréteur BASIC. print sqr(2) affiche la racine de 2. On en sort avec le contrôle qui rend la main au shell. Ici, une seule ligne suffit.", "bas is the BASIC interpreter. print sqr(2) prints the square root of 2. You leave it with the control that returns to the shell. Here, one line is enough."),
+      ],
+      success: L("1.414213562. Le programme est une expression, pas un mot du PDP-11.", "1.414213562. The program is an expression, not a PDP-11 word."),
+      lines: [
+        { prompt: "# ", expect: "bas", reply: [">"] },
+        { prompt: "> ", expect: "print sqr(2)", reply: ["1.414213562", "#"] },
+      ],
+    }),
+    consoleStep({
+      id: "unix-cc",
+      title: L("cc compile hello.c", "cc compiles hello.c"),
+      teach: [
+        L("Le fichier de la session est un main qui appelle printf. On le pose avec cat, puis cc hello.c produit a.out, et a.out l'exécute.", "The file in the session is a main that calls printf. You put it there with cat, then cc hello.c produces a.out, and a.out runs it."),
+        "main(argc, argv)\nchar **argv;\n{\nprintf(\"Hello world\\n\");\n}",
+      ],
+      success: L("Hello world. cc a traduit le C en programme, a.out l'a lancé.", "Hello world. cc translated the C into a program, and a.out ran it."),
+      lines: [
+        { prompt: "# ", expect: "cc hello.c", reply: ["#"] },
+        { prompt: "# ", expect: "a.out", reply: ["Hello world", "#"] },
+      ],
+    }),
+    consoleStep({
+      id: "unix-fc",
+      title: L("fc compile pi.f", "fc compiles pi.f"),
+      teach: [
+        L("pi.f approche π par la série de Nilakantha, en Fortran. fc pi.f compile, a.out écrit le résultat en format D : 0.3141592653580503d+01, soit environ 3.141592653580503.", "pi.f approximates π with the Nilakantha series, in Fortran. fc pi.f compiles, and a.out writes the result in D format: 0.3141592653580503d+01, about 3.141592653580503."),
+      ],
+      success: L("Le dernier programme de la session publiée. Le pupitre, lui, n'a toujours pas exécuté Unix.", "The last program of the published session. The panel still has not executed Unix."),
+      lines: [
+        { prompt: "# ", expect: "fc pi.f", reply: ["#"] },
+        { prompt: "# ", expect: "a.out", reply: ["PI is approximately 0.3141592653580503d+01", "#"] },
+      ],
+    }),
+    {
       id: "free",
       chapter: "free",
       title: L("Le pupitre est à toi", "The panel is yours"),
       pace: "free",
       revealRegs: true,
+      console: true,
       teach: [
-        L("Les leçons sont finies. La mémoire garde ton dernier programme. Tu peux l'effacer, déposer autre chose, lancer, t'arrêter, examiner.", "The lessons are finished. Memory still holds your last program. You can clear it, deposit something else, start, stop, and examine."),
-        L("Cette école exécute MOV, CMP, BIT, BIC, BIS, ADD, SUB, CLR, COM, INC, DEC, NEG, TST, ROL, ROR, ASL, ASR, SWAB, les branches, RESET, WAIT, NOP et HALT. Pas d'octets, pas de périphériques, pas de gestion mémoire. Le PDP-11 complet de Paul Nankervis, avec Unix et RSTS, est lié en bas de page.", "This school executes MOV, CMP, BIT, BIC, BIS, ADD, SUB, CLR, COM, INC, DEC, NEG, TST, ROL, ROR, ASL, ASR, SWAB, the branches, RESET, WAIT, NOP, and HALT. No bytes, no peripherals, no memory management. Paul Nankervis's full PDP-11, with Unix and RSTS, is linked at the bottom of the page."),
-        L("Trois défis utilisent le même geste. Le programme doit s'arrêter par l'instruction HALT, pas par l'interrupteur. Vérifie ensuite.", "Three challenges use the same gesture. The program must stop on the HALT instruction, not on the switch. Then check."),
+        L("Les leçons sont finies. La mémoire garde ton dernier programme. Le cahier plus bas redonne les gestes, les adresses et les quatre programmes à retaper.", "The lessons are finished. Memory still holds your last program. The notebook below gives back the gestures, the addresses, and the four programs to type in again."),
+        L("Le télétype rejoue la session Unix V5 dans l'ordre que tu veux. help en donne la liste. Ce n'est pas le disque : les mêmes réponses que dans le chapitre Unix, sans le processeur.", "The teletype replays the Unix V5 session in any order. help lists it. It is not the disk: the same answers as in the Unix chapter, without the processor."),
+        L("Cette école exécute MOV, CMP, BIT, BIC, BIS, ADD, SUB, CLR, COM, INC, DEC, NEG, TST, ROL, ROR, ASL, ASR, SWAB, les branches, RESET, WAIT, NOP et HALT. Pas d'octets, pas de périphériques, pas de gestion mémoire.", "This school executes MOV, CMP, BIT, BIC, BIS, ADD, SUB, CLR, COM, INC, DEC, NEG, TST, ROL, ROR, ASL, ASR, SWAB, the branches, RESET, WAIT, NOP, and HALT. No bytes, no peripherals, no memory management."),
       ],
       enter: function (ctx) {
         ctx.m.running = false;
         ctx.m.stall = 0;
+        ctx.session.lines = [];
+        ctx.session.lastUnix = "";
+      },
+      onEvent: function (ctx, e) {
+        if (e.type !== "line") return;
+        var typed = String(e.text || "").replace(/\s+/g, " ").trim();
+        if (!typed) return;
+        ctx.session.lines.push({ kind: "in", text: "# " + typed });
+        unixAnswer(typed, ctx.session).forEach(function (line) {
+          ctx.session.lines.push({ kind: "out", text: line });
+        });
       },
       guide: function () {
         return {
           done: false,
-          focus: null,
+          focus: "console",
           ghost: null,
-          text: L("Dépose à partir de 001000. ENABLE et START pour lancer. HALT pour t'arrêter. 177700 pour lire R0.", "Deposit from 001000. ENABLE and START to run. HALT to stop. 177700 to read R0."),
+          text: L("Pupitre : 001000, ENABLE, START, 177700 pour R0. Télétype : help, puis une commande de la session.", "Panel: 001000, ENABLE, START, 177700 for R0. Teletype: help, then a command from the session."),
         };
       },
     },
@@ -1167,13 +1517,66 @@ var Ecole = (function (PDP11) {
     return false;
   }
 
+  var handbook = [
+    {
+      title: L("Gestes", "Gestures"),
+      lines: [
+        L("Interrupteur levé = 1. Groupes de trois bits, poids 4, 2, 1. On lit l'octal au-dessus.", "Switch up = 1. Groups of three bits, weights 4, 2, 1. Read the octal digit above."),
+        L("LOAD ADRS copie les interrupteurs dans le registre d'adresse (lampes du haut).", "LOAD ADRS copies the switches into the address register (top lamps)."),
+        L("EXAM lit le mot visé et avance de 2. DEP écrit les interrupteurs et avance de 2.", "EXAM reads the word aimed at and advances by 2. DEP writes the switches and advances by 2."),
+        L("Adresse impaire : ADRS ERR, rien n'est lu ni écrit.", "Odd address: ADRS ERR, nothing is read or written."),
+        L("ENABLE puis START : le PC reçoit l'adresse, les codes N Z V C tombent, la course part.", "ENABLE then START: the PC receives the address, N Z V C clear, and the run begins."),
+        L("Interrupteur sur HALT : START charge le PC sans lancer. CONT exécute une instruction.", "Switch on HALT: START loads the PC and does not run. CONT executes one instruction."),
+        L("ENABLE puis CONT reprend la course. Baisser HALT arrête entre deux instructions.", "ENABLE then CONT resumes the run. Lowering HALT stops between two instructions."),
+        L("Pendant RUN, le rotacteur DATA choisit BUS, R0 ou INSTR. À l'arrêt, DATA redevient le dernier EXAM ou DEP.", "While running, the DATA knob selects BUS, R0, or INSTR. When halted, DATA returns to the last EXAM or DEP."),
+      ],
+    },
+    {
+      title: L("Adresses", "Addresses"),
+      lines: [
+        L("001000 : départ habituel d'un programme déposé à la main.", "001000: usual start of a program deposited by hand."),
+        L("177700 R0, 177701 R1, … 177707 PC. EXAM et DEP y avancent de 1, pas de 2.", "177700 is R0, 177701 is R1, … 177707 is the PC. EXAM and DEP advance by 1 there, not by 2."),
+        L("Amorce RK05 : 001002 choisit l'unité (000000 = rk0). 177412 adresse disque, 177406 compteur de mots, 177400 tampon, 000005 commande de lecture.", "RK05 bootstrap: 001002 selects the unit (000000 = rk0). 177412 is the disk address, 177406 the word count, 177400 the buffer, 000005 the read command."),
+        L("001022 = 105710, tstb (r0). Cette école s'arrête avant : pas d'octet, pas de contrôleur.", "001022 = 105710, tstb (r0). This school stops before that: no byte operation, no controller."),
+      ],
+    },
+    {
+      title: L("Programmes à retaper", "Programs to type in again"),
+      lines: [
+        L("Pour chacun : déposer les mots dans l'ordre, 001000 LOAD ADRS, ENABLE, START. Le résultat d'un HALT se lit par EXAM en 177700.", "For each one: deposit the words in order, 001000 LOAD ADRS, ENABLE, START. A HALT result is read with EXAM at 177700."),
+        L("Chenillard : DATA sur R0. Le bit tourne par ROL et la retenue. RESET est la pause.", "Chaser: DATA on R0. The bit rotates by ROL and the carry. RESET is the pause."),
+        L("Addition : R0 finit à 000017 (15 en décimal).", "Addition: R0 ends at 000017 (15 decimal)."),
+        L("Boucle : R0 finit à 000005. Le BNE ne contient pas l'adresse de retour, seulement une distance.", "Loop: R0 ends at 000005. The BNE does not hold the return address, only a distance."),
+        L("Amorce : on la dépose et on la relit. START ne charge pas Unix.", "Bootstrap: deposit it and read it back. START does not load Unix."),
+      ],
+      programs: [
+        { name: L("Chenillard", "Chaser"), rows: CHASER },
+        { name: L("Addition", "Addition"), rows: ADD },
+        { name: L("Boucle", "Loop"), rows: LOOP },
+        { name: L("Amorce RK05", "RK05 bootstrap"), rows: BOOT },
+      ],
+    },
+    {
+      title: L("Unix, en libre", "Unix, on your own"),
+      lines: [
+        L("Le télétype de cette page accepte les commandes ci-dessous, dans l'ordre que tu choisis. help les rappelle.", "The teletype on this page accepts the commands below, in whatever order you choose. help repeats them."),
+        L("Même réponses que le chapitre Unix. Le processeur ne les exécute pas : il n'y a pas de disque RK0 ici.", "Same answers as the Unix chapter. The processor does not execute them: there is no RK0 disk here."),
+        L("a.out lance le dernier compilé : Hello world après cc hello.c, le π en format D après fc pi.f.", "a.out runs the last compile: Hello world after cc hello.c, π in D format after fc pi.f."),
+        L("Le C de la session : main qui appelle printf(\"Hello world\"). Le Fortran : série de Nilakantha, écrite 0.3141592653580503d+01.", "The C from the session: a main that calls printf(\"Hello world\"). The Fortran: the Nilakantha series, written 0.3141592653580503d+01."),
+      ],
+      commands: UNIX,
+    },
+  ];
+
   return {
     CHAPTERS: CHAPTERS,
     steps: steps,
     challenges: challenges,
+    handbook: handbook,
     CHASER: CHASER,
     ADD: ADD,
     LOOP: LOOP,
+    BOOT: BOOT,
   };
 })(typeof PDP11 !== "undefined" ? PDP11 : globalThis.PDP11);
 

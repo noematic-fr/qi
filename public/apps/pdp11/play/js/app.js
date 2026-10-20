@@ -123,6 +123,7 @@
     if (e.type === "cont" && e.running) return L("CONT relance l'exécution depuis le PC actuel.", "CONT resumes execution from the current PC.");
     if (e.type === "cont") return L("CONT a exécuté une instruction (", "CONT executed one instruction (") + e.why + "). PC = " + oct(e.pc) + ".";
     if (e.type === "enable") return e.on ? L("ENABLE autorise START et CONT à lancer la course.", "ENABLE lets START and CONT begin the run.") : L("Interrupteur sur HALT.", "Switch on HALT.");
+    if (e.type === "line") return L("Ligne envoyée au télétype.", "Line sent to the teletype.");
     if (e.type === "knob") return L("Affichage DATA pendant RUN : ", "DATA display while running: ") + knobLabel(m.display) + ".";
     return L("Geste enregistré.", "Gesture recorded.");
   }
@@ -293,10 +294,17 @@
     head.className = "top";
     document.title = L("École du pupitre PDP-11", "PDP-11 front panel school");
     head.innerHTML = "<div class='brand'><p class='kicker'>" + L("École du pupitre", "Front panel school") + "</p><h1>" + L("PDP-11, geste par geste", "PDP-11, one gesture at a time") + "</h1></div>";
+    var nav = document.createElement("div");
+    nav.className = "nav";
     var progress = document.createElement("div");
     progress.className = "progress";
     progress.id = "progress";
-    head.appendChild(progress);
+    var steps = document.createElement("div");
+    steps.className = "steps";
+    steps.id = "steps";
+    nav.appendChild(progress);
+    nav.appendChild(steps);
+    head.appendChild(nav);
     root.appendChild(head);
 
     var main = document.createElement("main");
@@ -304,7 +312,7 @@
 
     var fiche = document.createElement("section");
     fiche.className = "fiche";
-    fiche.innerHTML = "<p class='fiche-kicker' id='fiche-kicker'></p><h2 id='fiche-title'></h2><div id='teach'></div><div id='listing'></div><div id='goal'></div><div class='fiche-actions'><button type='button' id='next'>" + L("Continuer", "Continue") + "</button><button type='button' id='restart' class='ghost-btn'>" + L("Reprendre le chapitre", "Restart the chapter") + "</button></div><div id='challenges'></div>";
+    fiche.innerHTML = "<p class='fiche-kicker' id='fiche-kicker'></p><h2 id='fiche-title'></h2><div id='teach'></div><div id='listing'></div><div id='tty-wrap' hidden><pre id='tty'></pre><form id='tty-form'><input id='tty-in' autocomplete='off' spellcheck='false'><button type='submit'>" + L("Envoyer", "Send") + "</button></form></div><div id='goal'></div><div class='fiche-actions'><button type='button' id='next'>" + L("Continuer", "Continue") + "</button><button type='button' id='restart' class='ghost-btn'>" + L("Reprendre le chapitre", "Restart the chapter") + "</button></div><div id='challenges'></div>";
     main.appendChild(fiche);
 
     var bench = document.createElement("section");
@@ -366,6 +374,15 @@
       decodeText = "";
       paint();
     });
+    $("tty-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      var input = $("tty-in");
+      var text = input.value;
+      if (!text.trim() || course.satisfied) return;
+      course.input({ type: "line", text: text });
+      input.value = "";
+      paint();
+    });
     $("decode").addEventListener("click", function () {
       var word = dataValue();
       var info = Disasm.describe(word);
@@ -421,12 +438,10 @@
     var host = $("progress");
     host.replaceChildren();
     var current = course.chapterIndex();
-    var max = course.maxChapterIndex();
     Ecole.CHAPTERS.forEach(function (chapter, i) {
       var btn = document.createElement("button");
       btn.type = "button";
       btn.textContent = chapter.title;
-      btn.disabled = i > max;
       if (i === current) btn.className = "now";
       else if (i < current) btn.className = "done";
       btn.addEventListener("click", function () {
@@ -436,6 +451,26 @@
         }
       });
       host.appendChild(btn);
+    });
+    var stepHost = $("steps");
+    stepHost.replaceChildren();
+    var chapter = Ecole.CHAPTERS[current];
+    var list = stepsOf(chapter.id);
+    var currentStep = course.step();
+    list.forEach(function (item, n) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.textContent = (n + 1) + " " + item.title;
+      if (item.id === currentStep.id) btn.className = "now";
+      else if (Ecole.steps.indexOf(item) < Ecole.steps.indexOf(currentStep)) btn.className = "done";
+      btn.addEventListener("click", function () {
+        if (course.jumpToStep(item.id)) {
+          decodeText = "";
+          builtStep = null;
+          paint();
+        }
+      });
+      stepHost.appendChild(btn);
     });
   }
 
@@ -476,6 +511,14 @@
         ol.appendChild(li);
       });
       listing.appendChild(ol);
+    }
+
+    var tty = $("tty-wrap");
+    tty.hidden = !step.console;
+    tty.classList.toggle("is-next", guide.focus === "console");
+    if (step.console) {
+      var shown = course.lines().map(function (line) { return line.text; }).join("\n");
+      if ($("tty").textContent !== shown) $("tty").textContent = shown;
     }
 
     var goal = $("goal");
@@ -524,6 +567,40 @@
         paint();
       });
       chal.appendChild(clear);
+
+      var book = document.createElement("div");
+      book.className = "handbook";
+      Ecole.handbook.forEach(function (part) {
+        var details = document.createElement("details");
+        var summary = document.createElement("summary");
+        summary.textContent = part.title;
+        details.appendChild(summary);
+        (part.lines || []).forEach(function (line) {
+          var p = document.createElement("p");
+          p.textContent = line;
+          details.appendChild(p);
+        });
+        (part.programs || []).forEach(function (program) {
+          var h = document.createElement("h3");
+          h.textContent = program.name;
+          details.appendChild(h);
+          var pre = document.createElement("pre");
+          pre.textContent = program.rows.map(function (row) {
+            return oct(row.addr) + "  " + oct(row.word) + "  " + row.asm;
+          }).join("\n");
+          details.appendChild(pre);
+        });
+        (part.commands || []).forEach(function (command) {
+          var p = document.createElement("p");
+          var code = document.createElement("code");
+          code.textContent = command.expect;
+          p.appendChild(code);
+          p.appendChild(document.createTextNode(" — " + command.about));
+          details.appendChild(p);
+        });
+        book.appendChild(details);
+      });
+      chal.appendChild(book);
 
       Ecole.challenges.forEach(function (item) {
         var card = document.createElement("article");

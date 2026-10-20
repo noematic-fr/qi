@@ -122,13 +122,20 @@ var Course = (function (Ecole) {
       return true;
     }
 
+    function jumpToStep(stepId) {
+      for (var i = 0; i < steps.length; i++) {
+        if (steps[i].id !== stepId) continue;
+        index = i;
+        if (index > maxIndex) maxIndex = index;
+        enter();
+        persist();
+        return true;
+      }
+      return false;
+    }
+
     function jumpToChapter(chapterId) {
-      var target = firstStepOfChapter(chapterId);
-      if (target > maxIndex) return false;
-      index = target;
-      enter();
-      persist();
-      return true;
+      return jumpToStep(steps[firstStepOfChapter(chapterId)].id);
     }
 
     function restartChapter() {
@@ -158,7 +165,6 @@ var Course = (function (Ecole) {
           if (steps[i].id === saved.stepId) index = i;
         }
         if (index > maxIndex) index = maxIndex;
-        index = firstStepOfChapter(steps[index].chapter);
       }
       enter();
     }
@@ -170,6 +176,8 @@ var Course = (function (Ecole) {
       onFrame: onFrame,
       continue: continueCourse,
       jumpToChapter: jumpToChapter,
+      jumpToStep: jumpToStep,
+      lines: function () { return session.lines || []; },
       restartChapter: restartChapter,
       restartAll: restartAll,
       chapterIndex: function () { return chapterIndexOf(index); },
