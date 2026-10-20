@@ -4,14 +4,14 @@ subtitle: Retrouver un dossier sur un disque remis dans le tiroir
 pubDate: 2026-09-11
 isPaid: true
 pricing: building
-badge: 15 octobre
+badge: 1er novembre
 showSupportLink: false
 platforms:
   - macOS
   - Windows
   - Linux
 mainLinks:
-  "La liste du 15 octobre": "https://qi.noematic.fr/media-cataloger-2#newsletter"
+  "La liste du 1er novembre": "https://qi.noematic.fr/media-cataloger-2#newsletter"
 links:
   "Media Cataloger (0.0.1)": "https://qi.noematic.fr/media-cataloger"
 ---
@@ -24,13 +24,13 @@ links:
   </p>
 </div>
 
-### 15 octobre 2026
+### 1er novembre 2026
 
 Aujourd’hui, <a href="/media-cataloger">Media Cataloger 0.0.1</a> est un téléchargement gratuit, limité à un disque.
 
-Le <strong>15 octobre 2026</strong>, un seul téléchargement pour tout le monde : Mac, Windows et Linux. La licence est un fichier envoyé par email. On le colle une fois. Ce fichier permet d’ajouter un disque et de chercher les copies. Le prix est publié avec ce téléchargement.
+Le <strong>1er novembre 2026</strong>, un seul téléchargement pour tout le monde : Mac, Windows et Linux. La licence est un fichier envoyé par email. On le colle une fois. Ce fichier permet d’ajouter un disque et de chercher les copies. Le prix est publié avec ce téléchargement.
 
-Sur Mac, l’application qui ressemble à une application Mac habituelle ne lit pas encore ce fichier. Le téléchargement du 15 octobre, lui, le lit.
+Sur Mac, l’application qui ressemble à une application Mac habituelle ne lit pas encore ce fichier. Le téléchargement du 1er novembre, lui, le lit.
 
 ### La liste
 
@@ -40,7 +40,7 @@ Sur Mac, l’application qui ressemble à une application Mac habituelle ne lit 
 
 </div>
 
-La liste est le moyen de recevoir le fichier du 15 octobre. <a href="mailto:contact@noematic.eu?subject=Media%20Cataloger%202">Écrivez-nous</a> si une licence vous a déjà été envoyée : le même fichier fonctionne encore.
+La liste est le moyen de recevoir le fichier du 1er novembre. <a href="mailto:contact@noematic.eu?subject=Media%20Cataloger%202">Écrivez-nous</a> si une licence vous a déjà été envoyée : le même fichier fonctionne encore.
 
 ### Fonctionnalités
 
@@ -90,19 +90,19 @@ Windows, macOS et Linux. iOS et Android ne font pas partie de cette offre.
 
 #### Media Cataloger ou Media Cataloger 2 ?
 
-**Une suite, deux pages.** <a href="/media-cataloger">Media Cataloger</a> est le téléchargement gratuit, limité à un disque, disponible maintenant. Media Cataloger 2 est le téléchargement prévu le **15 octobre 2026**. Ce n’est pas une deuxième app à acheter.
+**Une suite, deux pages.** <a href="/media-cataloger">Media Cataloger</a> est le téléchargement gratuit, limité à un disque, disponible maintenant. Media Cataloger 2 est le téléchargement prévu le **1er novembre 2026**. Ce n’est pas une deuxième app à acheter.
 
 #### J’ai déjà une licence ?
 
-Oui. Le fichier déjà envoyé fonctionne encore. On le colle une fois dans l’application du 15 octobre. Sur Mac, l’application qui ressemble à une application Mac habituelle ne le lit pas encore.
+Oui. Le fichier déjà envoyé fonctionne encore. On le colle une fois dans l’application du 1er novembre. Sur Mac, l’application qui ressemble à une application Mac habituelle ne le lit pas encore.
 
 #### Un seul fichier marche-t-il sur Mac, Windows et Linux ?
 
-Oui, dans l’application du 15 octobre. Le téléchargement gratuit reste sur <a href="/media-cataloger">Media Cataloger</a>, limité à un disque.
+Oui, dans l’application du 1er novembre. Le téléchargement gratuit reste sur <a href="/media-cataloger">Media Cataloger</a>, limité à un disque.
 
 #### J’utilise un Mac. Quel téléchargement lit la licence ?
 
-Celui du 15 octobre. L’autre application Mac est encore en finition et ne lit pas le fichier. Le téléchargement gratuit est l’ancien, pour les Mac Intel, limité à un disque.
+Celui du 1er novembre. L’autre application Mac est encore en finition et ne lit pas le fichier. Le téléchargement gratuit est l’ancien, pour les Mac Intel, limité à un disque.
 
 #### Est-ce open source ?
 

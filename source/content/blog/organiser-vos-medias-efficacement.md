@@ -29,7 +29,7 @@ Avant l'outil, le gain est simple :
 
 Ce n'est pas un DAM, pas iTunes, pas un éditeur EXIF, pas un outil de sauvegarde. Pas de tags, pas de recherche dans le texte des documents, pas de partage de collection.
 
-Sur macOS, deux applications, un moteur : Swift + nmcd (native) et nmcui (Go / Fyne). Sur Windows et Linux, le build Go. La licence reçue par email se colle dans le téléchargement du 15 octobre. L’application Mac habituelle ne lit pas encore ce fichier.
+Sur macOS, deux applications, un moteur : Swift + nmcd (native) et nmcui (Go / Fyne). Sur Windows et Linux, le build Go. La licence reçue par email se colle dans le téléchargement du 1er novembre. L’application Mac habituelle ne lit pas encore ce fichier.
 
 ## Étapes
 
@@ -41,6 +41,6 @@ Sur macOS, deux applications, un moteur : Swift + nmcd (native) et nmcui (Go / F
 
 ## Les deux pages
 
-[Media Cataloger 2](/media-cataloger-2) est la version en cours (beta 0.2). Il n'y a pas encore de zip public. Les zips **0.0.1**, gratuits et limités à 1 disque (Mac Intel, Windows, Linux), restent sur [Media Cataloger](/media-cataloger). Une licence déjà envoyée se colle dans le téléchargement du 15 octobre. L’application Mac habituelle ne lit pas encore ce fichier.
+[Media Cataloger 2](/media-cataloger-2) est la version en cours (beta 0.2). Il n'y a pas encore de zip public. Les zips **0.0.1**, gratuits et limités à 1 disque (Mac Intel, Windows, Linux), restent sur [Media Cataloger](/media-cataloger). Une licence déjà envoyée se colle dans le téléchargement du 1er novembre. L’application Mac habituelle ne lit pas encore ce fichier.
 
 <a href="/media-cataloger-2" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Voir Media Cataloger 2</a>

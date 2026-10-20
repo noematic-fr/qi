@@ -22,7 +22,7 @@ Cette page part d’une comparaison plus ancienne, relue le 29 septembre 2026. P
 - Afficher l’interface en français.
 - Tourner sur Mac, Windows et Linux.
 
-Le téléphone ne fait pas partie de cette offre. Le produit lit la date et l’appareil des photos, pour les retrouver. Il ne lit pas le lieu, ni le titre et l’artiste des morceaux. Aujourd’hui, le téléchargement gratuit est limité à un disque. Le 15 octobre 2026, le prix est publié avec le téléchargement. [Media Cataloger 2](/media-cataloger-2).
+Le téléphone ne fait pas partie de cette offre. Le produit lit la date et l’appareil des photos, pour les retrouver. Il ne lit pas le lieu, ni le titre et l’artiste des morceaux. Aujourd’hui, le téléchargement gratuit est limité à un disque. Le 1er novembre 2026, le prix est publié avec le téléchargement. [Media Cataloger 2](/media-cataloger-2).
 
 ## Le même travail, ailleurs
 
@@ -39,7 +39,7 @@ Le téléphone ne fait pas partie de cette offre. Le produit lit la date et l’
 | Étiquettes à partir de l’image | oui | oui, modèle sur l’ordinateur | non | non | non |
 | Données de l’appareil photo, musique | date et appareil | oui | oui | en partie | la musique |
 | Un autre ordinateur | oui | un dossier déjà relié | un dossier déjà relié | un dossier réseau | un dossier déjà relié |
-| Prix | publié le 15 octobre. Gratuit : un disque | achat unique, environ 50 $ en usage personnel | achat unique | achat unique | gratuit |
+| Prix | publié le 1er novembre. Gratuit : un disque | achat unique, environ 50 $ en usage personnel | achat unique | achat unique | gratuit |
 
 WinCatalog 2026 est en version 2026.3.1 (août 2026), avec un essai de 30 jours. DiskCatalogMaker affiche le français et une version d’évaluation. VVV est gratuit et ouvert.
 

@@ -20,7 +20,7 @@ links:
   <p class="m-0 font-medium">Téléchargement gratuit, un disque</p>
   <p class="mt-2 mb-0 text-sm opacity-90">
     Cette page est le téléchargement gratuit, limité à un disque — Windows, Linux, Mac Intel. La version en cours est <a href="/media-cataloger-2">Media Cataloger 2</a>.
-    Une licence déjà envoyée fonctionne encore là-bas. La liste du 15 octobre est sur la page Media Cataloger 2. <a href="mailto:contact@noematic.eu?subject=Media%20Cataloger%202">Écrivez-nous</a> s’il faut renvoyer le fichier.
+    Une licence déjà envoyée fonctionne encore là-bas. La liste du 1er novembre est sur la page Media Cataloger 2. <a href="mailto:contact@noematic.eu?subject=Media%20Cataloger%202">Écrivez-nous</a> s’il faut renvoyer le fichier.
   </p>
 </div>
 
@@ -80,25 +80,25 @@ Un gros catalogue reste utilisable.
 
 Windows, macOS et Linux. iOS et Android ne font pas partie de cette offre.
 
-La liste du 15 octobre, et le moyen de nous écrire, sont sur <a href="/media-cataloger-2">Media Cataloger 2</a>.
+La liste du 1er novembre, et le moyen de nous écrire, sont sur <a href="/media-cataloger-2">Media Cataloger 2</a>.
 
 ### Questions fréquentes {#faq}
 
 #### Media Cataloger ou Media Cataloger 2 ?
 
-**Une suite, deux pages.** Cette page est le téléchargement gratuit, limité à un disque. <a href="/media-cataloger-2">Media Cataloger 2</a> est le téléchargement prévu le 15 octobre 2026. Ce n’est pas une deuxième app à acheter.
+**Une suite, deux pages.** Cette page est le téléchargement gratuit, limité à un disque. <a href="/media-cataloger-2">Media Cataloger 2</a> est le téléchargement prévu le 1er novembre 2026. Ce n’est pas une deuxième app à acheter.
 
 #### J’ai déjà une licence ?
 
-Oui. Le fichier déjà envoyé fonctionne encore. On le colle une fois dans l’application du 15 octobre.
+Oui. Le fichier déjà envoyé fonctionne encore. On le colle une fois dans l’application du 1er novembre.
 
 #### Un seul fichier marche-t-il sur Mac, Windows et Linux ?
 
-Oui, dans l’application du 15 octobre. Cette page reste le téléchargement gratuit, limité à un disque.
+Oui, dans l’application du 1er novembre. Cette page reste le téléchargement gratuit, limité à un disque.
 
 #### J’utilise un Mac. Quel téléchargement lit la licence ?
 
-Celui du 15 octobre, sur <a href="/media-cataloger-2">Media Cataloger 2</a>. Cette page est l’ancien téléchargement gratuit, pour les Mac Intel, limité à un disque.
+Celui du 1er novembre, sur <a href="/media-cataloger-2">Media Cataloger 2</a>. Cette page est l’ancien téléchargement gratuit, pour les Mac Intel, limité à un disque.
 
 #### Est-ce open source ?
 
