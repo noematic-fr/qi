@@ -6,7 +6,7 @@ export const SITE = {
 	alternateLocale: 'en',
 	basePathname: '/',
 	title: 'Qi',
-	description: 'Apps et jeux indie de Noematic — Cozyplanes, Air Fireman, Sheep Dog, Media Cataloger 2.',
+	description: 'Apps et jeux indie de Noematic — Cozyplanes, Air Fireman, Sheep Dog, PDP-11, Media Cataloger 2.',
 	defaultOgImage: '/apple-touch-icon.png',
 	blogPostsPerPage: 10,
 };

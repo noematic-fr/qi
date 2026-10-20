@@ -76,7 +76,8 @@
 		"ignores": [
 			"source/content.config.ts",
 			"public/count.min.js",
-			"public/pioche/**"
+			"public/pioche/**",
+			"public/apps/pdp11/play/**"
 		],
 		"overrides": [
 			{
