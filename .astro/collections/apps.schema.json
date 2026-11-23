@@ -66,8 +66,12 @@
       "enum": [
         "paid",
         "free",
-        "building"
+        "building",
+        "beta"
       ]
+    },
+    "badge": {
+      "type": "string"
     },
     "isMenuBarApp": {
       "default": false,

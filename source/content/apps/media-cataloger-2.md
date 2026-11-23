@@ -3,8 +3,8 @@ title: Media Cataloger 2
 subtitle: Retrouver un dossier sur un disque remis dans le tiroir
 pubDate: 2026-09-11
 isPaid: true
-pricing: building
-badge: 1er novembre
+pricing: beta
+badge: bêta 1
 showSupportLink: false
 platforms:
   - macOS
@@ -24,13 +24,15 @@ links:
   </p>
 </div>
 
-### 1er novembre 2026
+### Bêta 1 — 2.0.0-beta.1
 
-Aujourd’hui, <a href="/media-cataloger">Media Cataloger 0.0.1</a> est un téléchargement gratuit, limité à un disque.
+<div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8">
+  <a href="/apps/media-cataloger-2/MediaCataloger-2.0.0-beta.1-8.app.zip" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">macOS</a>
+  <a href="/apps/media-cataloger-2/MediaCataloger-2.0.0-beta.1-8.exe.zip" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Windows</a>
+  <a href="/apps/media-cataloger-2/MediaCataloger-2.0.0-beta.1-8.tar.xz" class="btn text-white border border-primary-600/30 bg-primary-600/90 dark:bg-primary-800/80 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 px-8 py-3 w-full rounded-3xl">Linux</a>
+</div>
 
-Le <strong>1er novembre 2026</strong>, un seul téléchargement pour tout le monde : Mac, Windows et Linux. La licence est un fichier envoyé par email. On le colle une fois. Ce fichier permet d’ajouter un disque et de chercher les copies. Le prix est publié avec ce téléchargement.
-
-Sur Mac, l’application qui ressemble à une application Mac habituelle ne lit pas encore ce fichier. Le téléchargement du 1er novembre, lui, le lit.
+La bêta 1 est l’application complète : plusieurs disques, détection de doublons, fichier de licence. Une licence déjà envoyée par email fonctionne ici. C’est une pré-version ; attendez-vous à quelques angles vifs.
 
 ### La liste
 
